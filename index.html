@@ -38,11 +38,12 @@ a{color:inherit}
 header{position:fixed;top:0;left:0;right:0;z-index:90;transition:background .35s,box-shadow .35s;background:linear-gradient(rgba(12,31,21,.85),rgba(12,31,21,0))}
 header.solid{background:rgba(12,31,21,.92);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--gold-dim)}
 .nav-inner{max-width:1280px;margin:0 auto;padding:1rem 1.4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none}
+.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;flex-shrink:0;white-space:nowrap}
 .brand img{width:44px;height:44px}
-.brand-name{font-family:var(--font-d);font-size:1.3rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-bright);line-height:1}
-.brand-name small{display:block;font-family:var(--font-b);font-size:.55rem;letter-spacing:.62em;color:var(--tx-dim);margin-top:.25rem}
+.brand-name{font-family:var(--font-d);font-size:1.2rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-bright);line-height:1}
+.brand-name small{display:block;font-family:var(--font-b);font-size:.5rem;letter-spacing:.34em;color:var(--tx-dim);margin-top:.25rem}
 nav ul{list-style:none;display:flex;gap:1.5rem;align-items:center}
+@media(max-width:1420px){nav ul{gap:1rem}nav a{font-size:.72rem;letter-spacing:.12em}}
 nav a{position:relative;text-decoration:none;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--tx-dim);padding:.4rem 0;white-space:nowrap;transition:color .25s}
 nav a:not(.nav-cta)::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .35s var(--ease)}
 nav a:hover,nav a.active{color:var(--gold-bright)}
@@ -114,7 +115,9 @@ em{font-style:italic;font-weight:300;color:var(--gold-bright)}
 }
 
 /* ---------- Hero → sections/hero.liquid ---------- */
-.hero{min-height:100svh;display:flex;align-items:flex-end;padding:0 0 5.5rem;isolation:isolate}
+.hero{min-height:100svh;display:flex;align-items:flex-end;padding:0 0 5rem;isolation:isolate}
+.hero .wrap{padding-top:8.5rem}
+.hero h1{font-size:clamp(2.6rem,6vw,4.6rem)}
 .hero-bg{position:absolute;inset:0;z-index:-2;background-size:cover;background-position:center}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(12,31,21,.93) 0%,rgba(12,31,21,.72) 48%,rgba(12,31,21,.45) 100%),linear-gradient(rgba(12,31,21,.15) 55%,var(--green-deep) 100%)}
 .hero .wrap{width:100%}
