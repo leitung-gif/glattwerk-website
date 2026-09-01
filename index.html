@@ -818,7 +818,9 @@ footer li{list-style:none;padding:.2rem 0}
   function observeAll(){
     document.querySelectorAll('.page.active .rv, .stats .rv').forEach(function(el){
       if (el.classList.contains('in')) return;
-      if (io) io.observe(el); else el.classList.add('in');
+      /* Elemente im Startviewport sofort zeigen — IO nur für den Rest */
+      if (!io || el.getBoundingClientRect().top < window.innerHeight * 1.05) { el.classList.add('in'); }
+      else io.observe(el);
     });
   }
 
