@@ -1,0 +1,61 @@
+{%- comment -%}
+  Vorher/Nachher-Slider. Erwartet Composite-Bilder: linke Hälfte = Vorher,
+  rechte Hälfte = Nachher. theme.js teilt sie in zwei Layer mit Zieh-Regler.
+{%- endcomment -%}
+<section class="sec {% if section.settings.scheme == 'green' %}sec-green{% endif %}">
+  <div class="wrap">
+    <div class="center rv">
+      {%- if section.settings.kicker != blank -%}<span class="kicker">{{ section.settings.kicker }}</span>{%- endif -%}
+      {%- if section.settings.heading != blank -%}<h2>{{ section.settings.heading }}</h2>{%- endif -%}
+      {%- if section.settings.text != blank -%}<p class="lede" style="margin:1.4rem auto 0">{{ section.settings.text }}</p>{%- endif -%}
+    </div>
+    <div class="ba-grid">
+      {%- for block in section.blocks -%}
+        <div class="rv {% cycle '', 'd1', 'd2' %}" {{ block.shopify_attributes }}>
+          {%- capture img_url -%}
+            {%- if block.settings.image -%}{{ block.settings.image | image_url: width: 900 }}{%- else -%}{{ block.settings.fallback_asset | default: 'vorher-nachher-achsel-STOCK.jpg' | asset_url }}{%- endif -%}
+          {%- endcapture -%}
+          <div class="ba" data-img="{{ img_url | strip }}">
+            <span class="ba-chip l">Vorher</span><span class="ba-chip r">Nachher</span>
+          </div>
+          <h3 style="margin-top:1.2rem">{{ block.settings.title }}</h3>
+          <p style="font-size:.92rem" class="lede">{{ block.settings.text }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+    {%- if section.settings.note != blank -%}<p class="ba-note rv" style="margin-top:2rem">{{ section.settings.note }}</p>{%- endif -%}
+    {%- if settings.whatsapp_number != blank and section.settings.cta_label != blank -%}
+      <div class="btn-row rv" style="justify-content:center">
+        <a class="btn btn-ink" href="https://wa.me/{{ settings.whatsapp_number }}" target="_blank" rel="noopener">{{ section.settings.cta_label }}</a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Vorher/Nachher-Slider",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Vorher / Nachher" },
+    { "type": "inline_richtext", "id": "heading", "label": "Titel", "default": "Zieh den Regler — <em>sieh selbst.</em>" },
+    { "type": "textarea", "id": "text", "label": "Einleitung" },
+    { "type": "text", "id": "note", "label": "Hinweis unter den Bildern", "default": "Symbolbilder — echte Behandlungsresultate aus dem Studio folgen." },
+    { "type": "text", "id": "cta_label", "label": "CTA-Button", "default": "Deine Behandlung starten" },
+    { "type": "select", "id": "scheme", "label": "Farbschema", "options": [ { "value": "light", "label": "Champagner" }, { "value": "green", "label": "Dunkelgrün" } ], "default": "light" }
+  ],
+  "blocks": [
+    {
+      "type": "slider",
+      "name": "Vergleich",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Composite-Bild (links Vorher, rechts Nachher)" },
+        { "type": "text", "id": "fallback_asset", "label": "Fallback-Asset (Dateiname im Theme)" },
+        { "type": "text", "id": "title", "label": "Titel", "default": "Achseln & kleine Zonen" },
+        { "type": "textarea", "id": "text", "label": "Text" }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [{ "name": "Vorher/Nachher-Slider" }]
+}
+{% endschema %}

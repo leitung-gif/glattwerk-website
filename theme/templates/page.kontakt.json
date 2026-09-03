@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "contact": {
+      "type": "contact",
+      "settings": {
+        "kicker": "Kontakt",
+        "heading": "Ich freue mich <em>auf dich.</em>",
+        "form_title": "Schreib mir eine Nachricht"
+      }
+    }
+  },
+  "order": ["contact"]
+}

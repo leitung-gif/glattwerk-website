@@ -1,0 +1,105 @@
+{
+  "sections": {
+    "intro": {
+      "type": "intro-split",
+      "settings": {
+        "first": true,
+        "kicker": "Haarentfernung",
+        "heading": "Vier Wellenlängen. <em>Ein Ziel.</em>",
+        "text1": "Kein tägliches Rasieren mehr, kein Waxing, keine Hautirritationen. Der medizinische 4-Wellen-Diodenlaser behandelt verschiedene Haar- und Hauttypen effektiv und schonend — auch in empfindlichen Bereichen.",
+        "text2": "Ob Gesicht, Oberkörper, Beine oder Intimzone: Ich nehme mir Zeit für deine Beratung und passe jede Behandlung individuell an.",
+        "cta_primary": "Beratung vereinbaren",
+        "cta_secondary": "Zur Preisliste",
+        "cta_secondary_url": "#preise",
+        "fallback_asset": "laser-behandlungsraum.jpg",
+        "image_position": "right",
+        "scheme": "light"
+      }
+    },
+    "steps": {
+      "type": "steps",
+      "settings": { "kicker": "So läuft's", "heading": "Dein Weg zur <em>glatten Haut</em>" },
+      "blocks": {
+        "st1": { "type": "step", "settings": { "title": "Beratung & Hautanalyse", "text": "Wir schauen deine Haut und deine Ziele gemeinsam an — ehrlich und unverbindlich." } },
+        "st2": { "type": "step", "settings": { "title": "Dein Behandlungsplan", "text": "Zonen, Anzahl Sitzungen, Ablauf: abgestimmt auf Haut- und Haartyp." } },
+        "st3": { "type": "step", "settings": { "title": "Sitzungen im Rhythmus", "text": "Im Abstand von 4–8 Wochen — nach 6–10 Sitzungen langfristig sichtbar." } }
+      },
+      "block_order": ["st1", "st2", "st3"]
+    },
+    "preise": {
+      "type": "price-list",
+      "settings": {
+        "kicker": "Preisliste",
+        "heading": "Haarentfernung",
+        "anchor": "preise",
+        "show_tabs": true,
+        "tab_a_label": "Damen",
+        "tab_b_label": "Herren",
+        "note": "Für ein optimales Ergebnis sind mehrere Sitzungen im Abstand von 4–8 Wochen nötig — je nach Körperregion und Haarstruktur. Deinen persönlichen Behandlungsplan erstellen wir gemeinsam bei der Beratung.",
+        "cta_label": "Termin buchen",
+        "scheme": "green"
+      },
+      "blocks": {
+        "dg1": { "type": "group", "settings": { "title": "Gesicht & Oberkörper", "tab": "a" } },
+        "d01": { "type": "row", "settings": { "label": "Gesicht", "price": "CHF 70.–", "tab": "a" } },
+        "d02": { "type": "row", "settings": { "label": "Oberlippe", "price": "CHF 45.–", "tab": "a" } },
+        "d03": { "type": "row", "settings": { "label": "Kinn", "price": "CHF 45.–", "tab": "a" } },
+        "d04": { "type": "row", "settings": { "label": "Hals", "price": "CHF 45.–", "tab": "a" } },
+        "d05": { "type": "row", "settings": { "label": "Nacken", "price": "CHF 45.–", "tab": "a" } },
+        "d06": { "type": "row", "settings": { "label": "Achseln", "price": "CHF 70.–", "tab": "a" } },
+        "d07": { "type": "row", "settings": { "label": "Arme komplett", "price": "CHF 105.–", "tab": "a" } },
+        "d08": { "type": "row", "settings": { "label": "Oberarme", "price": "CHF 65.–", "tab": "a" } },
+        "d09": { "type": "row", "settings": { "label": "Unterarme", "price": "CHF 85.–", "tab": "a" } },
+        "d10": { "type": "row", "settings": { "label": "Hände", "price": "CHF 45.–", "tab": "a" } },
+        "d11": { "type": "row", "settings": { "label": "Rücken komplett", "price": "CHF 125.–", "tab": "a" } },
+        "d12": { "type": "row", "settings": { "label": "Unterrücken", "price": "CHF 70.–", "tab": "a" } },
+        "d13": { "type": "row", "settings": { "label": "Bauch / Brust", "price": "CHF 140.–", "tab": "a" } },
+        "dg2": { "type": "group", "settings": { "title": "Beine, Intim & Pakete", "tab": "a" } },
+        "d14": { "type": "row", "settings": { "label": "Beine komplett", "price": "CHF 145.–", "tab": "a" } },
+        "d15": { "type": "row", "settings": { "label": "Oberschenkel", "price": "CHF 90.–", "tab": "a" } },
+        "d16": { "type": "row", "settings": { "label": "Unterschenkel inkl. Knie", "price": "CHF 80.–", "tab": "a" } },
+        "d17": { "type": "row", "settings": { "label": "Füsse", "price": "CHF 45.–", "tab": "a" } },
+        "d18": { "type": "row", "settings": { "label": "Bikini-Linie", "price": "CHF 80.–", "tab": "a" } },
+        "d19": { "type": "row", "settings": { "label": "Intim komplett (inkl. Po-Falte)", "price": "CHF 95.–", "tab": "a" } },
+        "d20": { "type": "row", "settings": { "label": "Linea Alba", "desc": "Haarlinie am Unterbauch", "price": "CHF 45.–", "tab": "a" } },
+        "d21": { "type": "row", "settings": { "label": "Ganzkörper (4 Zonen)", "price": "CHF 290.–", "tab": "a" } },
+        "hg1": { "type": "group", "settings": { "title": "Gesicht & Oberkörper", "tab": "b" } },
+        "h01": { "type": "row", "settings": { "label": "Gesicht", "price": "CHF 90.–", "tab": "b" } },
+        "h02": { "type": "row", "settings": { "label": "Oberlippe", "price": "CHF 45.–", "tab": "b" } },
+        "h03": { "type": "row", "settings": { "label": "Kinn", "price": "CHF 45.–", "tab": "b" } },
+        "h04": { "type": "row", "settings": { "label": "Hals", "price": "CHF 55.–", "tab": "b" } },
+        "h05": { "type": "row", "settings": { "label": "Nacken", "price": "CHF 55.–", "tab": "b" } },
+        "h06": { "type": "row", "settings": { "label": "Achseln", "price": "CHF 80.–", "tab": "b" } },
+        "h07": { "type": "row", "settings": { "label": "Arme komplett", "price": "CHF 130.–", "tab": "b" } },
+        "h08": { "type": "row", "settings": { "label": "Oberarme", "price": "CHF 85.–", "tab": "b" } },
+        "h09": { "type": "row", "settings": { "label": "Unterarme", "price": "CHF 105.–", "tab": "b" } },
+        "h10": { "type": "row", "settings": { "label": "Hände", "price": "CHF 55.–", "tab": "b" } },
+        "h11": { "type": "row", "settings": { "label": "Rücken komplett", "price": "CHF 140.–", "tab": "b" } },
+        "h12": { "type": "row", "settings": { "label": "Unterrücken", "price": "CHF 90.–", "tab": "b" } },
+        "h13": { "type": "row", "settings": { "label": "Bauch / Brust", "price": "CHF 180.–", "tab": "b" } },
+        "hg2": { "type": "group", "settings": { "title": "Beine & Pakete", "tab": "b" } },
+        "h14": { "type": "row", "settings": { "label": "Beine komplett", "price": "CHF 165.–", "tab": "b" } },
+        "h15": { "type": "row", "settings": { "label": "Oberschenkel", "price": "CHF 115.–", "tab": "b" } },
+        "h16": { "type": "row", "settings": { "label": "Unterschenkel inkl. Knie", "price": "CHF 105.–", "tab": "b" } },
+        "h17": { "type": "row", "settings": { "label": "Füsse", "price": "CHF 55.–", "tab": "b" } },
+        "h18": { "type": "row", "settings": { "label": "Ganzkörper (4 Zonen)", "price": "CHF 320.–", "tab": "b" } },
+        "h19": { "type": "row", "settings": { "label": "Intimzone", "price": "nicht im Angebot", "tab": "b" } }
+      },
+      "block_order": ["dg1", "d01", "d02", "d03", "d04", "d05", "d06", "d07", "d08", "d09", "d10", "d11", "d12", "d13", "dg2", "d14", "d15", "d16", "d17", "d18", "d19", "d20", "d21", "hg1", "h01", "h02", "h03", "h04", "h05", "h06", "h07", "h08", "h09", "h10", "h11", "h12", "h13", "hg2", "h14", "h15", "h16", "h17", "h18", "h19"]
+    },
+    "tips": {
+      "type": "tips",
+      "settings": { "kicker": "Pflegetipps", "heading": "Nach dem Lasern: <em>so bleibt's schön.</em>", "cta_label": "Termin buchen" },
+      "blocks": {
+        "t1": { "type": "tip", "settings": { "title": "Direkt danach", "items": "Leichte Rötungen, Schwellungen oder Wärmegefühl sind normal\nBei Bedarf kühlen — kein Eis direkt auf die Haut\nBeruhigende Pflege: Aloe Vera oder Panthenol" } },
+        "t2": { "type": "tip", "settings": { "title": "24–48 h vermeiden", "items": "Sauna, Dampfbad, Solarium, heisse Bäder\nSport und starkes Schwitzen\nMake-up, Parfum, alkoholhaltige Produkte auf den Arealen\nEnge Kleidung und Reibung" } },
+        "t3": { "type": "tip", "settings": { "title": "Sonnenschutz", "items": "2 Wochen keine direkte Sonne\nTäglich LSF 50+\nKein Solarium zwischen den Behandlungen" } },
+        "t4": { "type": "tip", "settings": { "title": "Haarwachstum", "items": "Haare fallen nach 7–21 Tagen von selbst aus\nNicht zupfen, wachsen oder epilieren\nRasieren erlaubt, sobald die Haut beruhigt ist" } },
+        "t5": { "type": "tip", "settings": { "title": "Hautpflege", "items": "Milde, unparfümierte Produkte\n7 Tage kein Peeling, Retinol oder Fruchtsäuren\nHaut sauber und mit Feuchtigkeit versorgt halten" } },
+        "t6": { "type": "tip", "settings": { "title": "Melde dich bei mir", "items": "Bei starken Schmerzen, Blasen oder Krusten\nRötungen über 48 Stunden\nUngewöhnlichen Reaktionen oder Unsicherheit" } }
+      },
+      "block_order": ["t1", "t2", "t3", "t4", "t5", "t6"]
+    }
+  },
+  "order": ["intro", "steps", "preise", "tips"]
+}

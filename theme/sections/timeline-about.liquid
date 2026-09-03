@@ -1,0 +1,45 @@
+<section class="sec sec-first">
+  <div class="wrap split" style="align-items:start">
+    <div class="rv">
+      {%- if section.settings.kicker != blank -%}<span class="kicker">{{ section.settings.kicker }}</span>{%- endif -%}
+      <h1>{{ section.settings.heading }}</h1>
+      {%- if section.settings.text != blank -%}<p class="lede" style="margin-top:1.8rem">{{ section.settings.text }}</p>{%- endif -%}
+      <div class="timeline">
+        {%- for block in section.blocks -%}
+          <div class="tl" {{ block.shopify_attributes }}><b>{{ block.settings.title }}</b><p>{{ block.settings.text }}</p></div>
+        {%- endfor -%}
+      </div>
+    </div>
+    <div class="arch rv d1" style="position:sticky;top:7rem">
+      {%- if section.settings.image -%}
+        {{ section.settings.image | image_url: width: 880 | image_tag: alt: section.settings.heading | strip_html }}
+      {%- else -%}
+        <img src="{{ 'corina-portrait.jpg' | asset_url }}" alt="" width="880" height="1100">
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Über mich (Timeline)",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Über mich" },
+    { "type": "inline_richtext", "id": "heading", "label": "Titel", "default": "Hi, ich bin <em>Corina.</em>" },
+    { "type": "textarea", "id": "text", "label": "Einleitung" },
+    { "type": "image_picker", "id": "image", "label": "Porträt (Fallback: mitgeliefertes Bild)" }
+  ],
+  "blocks": [
+    {
+      "type": "station",
+      "name": "Station",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Titel", "default": "Station" },
+        { "type": "textarea", "id": "text", "label": "Text" }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [{ "name": "Über mich (Timeline)" }]
+}
+{% endschema %}

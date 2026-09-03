@@ -1,0 +1,47 @@
+<section class="sec sec-first">
+  <div class="wrap split" style="align-items:start">
+    <div class="rv">
+      {%- if section.settings.kicker != blank -%}<span class="kicker">{{ section.settings.kicker }}</span>{%- endif -%}
+      <h1>{{ section.settings.heading }}</h1>
+      <ul class="contact-list">
+        <li><span class="k">Studio</span><span>{{ shop.name }} · {{ settings.address | newline_to_br | replace: '<br />', ' · ' }}</span></li>
+        {%- if settings.phone_display != blank -%}<li><span class="k">Telefon</span><a href="tel:{{ settings.phone_e164 }}">{{ settings.phone_display }}</a></li>{%- endif -%}
+        {%- if settings.whatsapp_number != blank -%}<li><span class="k">WhatsApp</span><a href="https://wa.me/{{ settings.whatsapp_number }}" target="_blank" rel="noopener">Direkt schreiben</a></li>{%- endif -%}
+        {%- if settings.email != blank -%}<li><span class="k">E-Mail</span><a href="mailto:{{ settings.email }}">{{ settings.email }}</a></li>{%- endif -%}
+        {%- if settings.instagram_url != blank -%}<li><span class="k">Instagram</span><a href="{{ settings.instagram_url }}" target="_blank" rel="noopener">{{ settings.instagram_handle }}</a></li>{%- endif -%}
+        {%- if settings.hours != blank -%}<li><span class="k">Termine</span><span>{{ settings.hours }}</span></li>{%- endif -%}
+        {%- if settings.maps_url != blank -%}<li><span class="k">Anfahrt</span><a href="{{ settings.maps_url }}" target="_blank" rel="noopener">In Google Maps öffnen</a></li>{%- endif -%}
+      </ul>
+      {%- if settings.whatsapp_number != blank -%}
+        <div class="btn-row"><a class="btn btn-ink" href="https://wa.me/{{ settings.whatsapp_number }}" target="_blank" rel="noopener">Termin buchen</a></div>
+      {%- endif -%}
+    </div>
+    <div class="form-card rv d1">
+      <h3 style="margin-bottom:1.4rem">{{ section.settings.form_title }}</h3>
+      {%- form 'contact' -%}
+        {%- if form.posted_successfully? -%}
+          <p style="color:var(--gold-deep)">Danke für deine Nachricht — ich melde mich so schnell wie möglich.</p>
+        {%- endif -%}
+        {%- if form.errors -%}
+          <p style="color:#a03030">Da hat etwas nicht geklappt — bitte prüfe deine Angaben.</p>
+        {%- endif -%}
+        <div><label for="cf-name">Name</label><input id="cf-name" type="text" name="contact[name]" required autocomplete="name"></div>
+        <div><label for="cf-mail">E-Mail</label><input id="cf-mail" type="email" name="contact[email]" required autocomplete="email"></div>
+        <div><label for="cf-msg">Nachricht</label><textarea id="cf-msg" name="contact[body]" rows="5" required placeholder="Welche Behandlung interessiert dich?"></textarea></div>
+        <button class="btn btn-ink" type="submit" style="border:none;cursor:pointer;justify-self:start">Nachricht senden</button>
+      {%- endform -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Kontakt + Formular",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Kontakt" },
+    { "type": "inline_richtext", "id": "heading", "label": "Titel", "default": "Ich freue mich <em>auf dich.</em>" },
+    { "type": "text", "id": "form_title", "label": "Formular-Titel", "default": "Schreib mir eine Nachricht" }
+  ],
+  "presets": [{ "name": "Kontakt + Formular" }]
+}
+{% endschema %}

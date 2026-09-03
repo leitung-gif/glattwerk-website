@@ -1,0 +1,9 @@
+{
+  "general": {
+    "meta": { "page": "Seite" },
+    "404": { "title": "Seite nicht gefunden" }
+  },
+  "templates": {
+    "contact": { "form": { "title": "Kontakt" } }
+  }
+}

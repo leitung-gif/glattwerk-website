@@ -1,0 +1,54 @@
+<section class="sec {% if section.settings.scheme == 'green' %}sec-green{% endif %}" style="padding-bottom:3.5rem">
+  <div class="wrap-wide rv" style="display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap">
+    <div>
+      {%- if section.settings.kicker != blank -%}<span class="kicker">{{ section.settings.kicker }}</span>{%- endif -%}
+      <h2>{{ section.settings.heading }}</h2>
+    </div>
+    <p class="hs-hint">Seitlich scrollen →</p>
+  </div>
+  <div class="hscroll">
+    {%- for block in section.blocks -%}
+      <a class="hs-card rv {% cycle '', 'd1', 'd2', 'd3' %}" href="{{ block.settings.link }}" {{ block.shopify_attributes }}>
+        <div class="arch">
+          {%- if block.settings.image -%}
+            {{ block.settings.image | image_url: width: 840 | image_tag: alt: block.settings.title }}
+          {%- else -%}
+            <img src="{{ block.settings.fallback_asset | default: 'studio-interieur.jpg' | asset_url }}" alt="{{ block.settings.title }}" width="840" height="1050">
+          {%- endif -%}
+        </div>
+        <span class="hs-tag">{{ block.settings.tag }}</span>
+        <h3>{{ block.settings.title }}</h3>
+        <p>{{ block.settings.text }}</p>
+        <span class="hs-go">{{ block.settings.link_label }}</span>
+      </a>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Angebots-Karten (Reihe)",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Alles aus einer Hand" },
+    { "type": "inline_richtext", "id": "heading", "label": "Titel", "default": "Drei Handwerke. <em>Ein Anspruch.</em>" },
+    { "type": "select", "id": "scheme", "label": "Farbschema", "options": [ { "value": "light", "label": "Champagner" }, { "value": "green", "label": "Dunkelgrün" } ], "default": "light" }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Karte",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Bild" },
+        { "type": "text", "id": "fallback_asset", "label": "Fallback-Asset (Dateiname im Theme)", "info": "Wird genutzt, solange kein Bild gewählt ist" },
+        { "type": "text", "id": "tag", "label": "Tag", "default": "Laser" },
+        { "type": "text", "id": "title", "label": "Titel", "default": "Haarentfernung" },
+        { "type": "textarea", "id": "text", "label": "Text" },
+        { "type": "url", "id": "link", "label": "Link" },
+        { "type": "text", "id": "link_label", "label": "Link-Text", "default": "Mehr erfahren" }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [{ "name": "Angebots-Karten (Reihe)" }]
+}
+{% endschema %}

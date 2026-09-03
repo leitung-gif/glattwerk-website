@@ -1,0 +1,59 @@
+{
+  "sections": {
+    "intro": {
+      "type": "intro-split",
+      "settings": {
+        "first": true,
+        "kicker": "Kosmetik",
+        "heading": "Jeder Haut <em>ihre Pflege.</em>",
+        "text1": "Individuelle Facials und Wirkstoffbehandlungen mit den hochwertigen Produkten von Circadia. Ob unreine Haut, erste Zeichen der Hautalterung oder ein müder Teint — gemeinsam finden wir die Behandlung, die deine Haut gerade braucht.",
+        "text2": "Sichtbare Ergebnisse, verbunden mit einem entspannten Wohlfühlerlebnis.",
+        "cta_primary": "Termin buchen",
+        "fallback_asset": "circadia-produkte.jpg",
+        "image_position": "right",
+        "scheme": "light"
+      }
+    },
+    "preise": {
+      "type": "price-list",
+      "settings": {
+        "kicker": "Preisliste",
+        "heading": "Facials & Treatments",
+        "show_tabs": false,
+        "note": "Zu jeder Behandlung gehört eine gründliche, auf deinen Hautzustand abgestimmte Reinigung — manuell oder apparativ. Zusammen optimieren wir auch deine Heimpflege: Schöne Haut ist Teamarbeit.",
+        "cta_label": "Termin buchen",
+        "scheme": "light"
+      },
+      "blocks": {
+        "g1": { "type": "group", "settings": { "title": "Facials", "tab": "a" } },
+        "f01": { "type": "row", "settings": { "label": "Classic Facial · ca. 1 Std.", "desc": "Reinigung/Ausreinigung, Massage, Maske, Abschlusspflege", "price": "CHF 125.–", "tab": "a" } },
+        "f02": { "type": "row", "settings": { "label": "Microneedling · ca. 1.5 Std.", "desc": "Mit Enzympeeling und auf die Haut abgestimmtem Serum", "price": "CHF 149.–", "tab": "a" } },
+        "f03": { "type": "row", "settings": { "label": "Microneedling · 5er-Abo", "price": "CHF 650.–", "tab": "a" } },
+        "f04": { "type": "row", "settings": { "label": "BiopeelX Premium Algen-Microneedling · ca. 1 Std.", "price": "CHF 155.–", "tab": "a" } },
+        "f05": { "type": "row", "settings": { "label": "BiopeelX · 5er-Abo", "price": "CHF 690.–", "tab": "a" } },
+        "f06": { "type": "row", "settings": { "label": "Aknebehandlung · ca. 1 Std.", "desc": "Indikationsgerecht, abgestimmt auf Hautzustand und Medikation", "price": "CHF 149.–", "tab": "a" } },
+        "f07": { "type": "row", "settings": { "label": "Firming Peptide Maske (Anti-Aging) · ca. 1.5 Std.", "price": "CHF 185.–", "tab": "a" } },
+        "f08": { "type": "row", "settings": { "label": "Oxygen Rx Facial (Akne, Rosazea) · ca. 1.5 Std.", "price": "CHF 185.–", "tab": "a" } },
+        "f09": { "type": "row", "settings": { "label": "Oxygen Rx · 5er-Abo", "price": "CHF 850.–", "tab": "a" } },
+        "f10": { "type": "row", "settings": { "label": "Facial for Teens (12–18 J.) · ca. 1 Std.", "price": "CHF 95.–", "tab": "a" } },
+        "g2": { "type": "group", "settings": { "title": "Treatments & Beratung", "tab": "a" } },
+        "tr1": { "type": "row", "settings": { "label": "Switch Treatment · ca. 1.5 Std.", "desc": "Anti-Aging, Straffung, Hyperpigmentierung — inkl. Homecare für 3 Tage", "price": "CHF 185.–", "tab": "a" } },
+        "tr2": { "type": "row", "settings": { "label": "Switch · 3er-Abo", "price": "CHF 540.–", "tab": "a" } },
+        "tr3": { "type": "row", "settings": { "label": "Switch · 6er-Abo", "price": "CHF 980.–", "tab": "a" } },
+        "tr4": { "type": "row", "settings": { "label": "Dermaplaning Treatment · ca. 1 Std.", "desc": "Sofort glattes, frisches Hautbild", "price": "CHF 125.–", "tab": "a" } },
+        "tr5": { "type": "row", "settings": { "label": "Dermaplaning Add-on · ca. 25 Min.", "price": "CHF 55.–", "tab": "a" } },
+        "tr6": { "type": "row", "settings": { "label": "Circadia Homecare-Beratung · ca. 45 Min.", "price": "CHF 85.–", "tab": "a" } },
+        "g3": { "type": "group", "settings": { "title": "Brauen & Wimpern", "tab": "a" } },
+        "b01": { "type": "row", "settings": { "label": "Brauen zupfen", "price": "CHF 25.–", "tab": "a" } },
+        "b02": { "type": "row", "settings": { "label": "Brauen färben", "price": "CHF 30.–", "tab": "a" } },
+        "b03": { "type": "row", "settings": { "label": "Brauen zupfen & färben", "price": "CHF 50.–", "tab": "a" } },
+        "b04": { "type": "row", "settings": { "label": "Wimpern färben", "price": "CHF 30.–", "tab": "a" } },
+        "b05": { "type": "row", "settings": { "label": "Brow Lifting", "price": "CHF 99.–", "tab": "a" } },
+        "b06": { "type": "row", "settings": { "label": "Lash Lifting", "price": "CHF 89.–", "tab": "a" } },
+        "b07": { "type": "row", "settings": { "label": "Brow & Lash Lifting", "price": "CHF 159.–", "tab": "a" } }
+      },
+      "block_order": ["g1", "f01", "f02", "f03", "f04", "f05", "f06", "f07", "f08", "f09", "f10", "g2", "tr1", "tr2", "tr3", "tr4", "tr5", "tr6", "g3", "b01", "b02", "b03", "b04", "b05", "b06", "b07"]
+    }
+  },
+  "order": ["intro", "preise"]
+}

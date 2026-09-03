@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-placeholder",
+      "settings": { "heading": "Seite nicht gefunden", "text": "Diese Seite gibt es nicht (mehr). Über das Menü findest du alles Wichtige." }
+    }
+  },
+  "order": ["main"]
+}

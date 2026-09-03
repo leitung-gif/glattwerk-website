@@ -1,0 +1,91 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "word_regular": "GLATT",
+        "word_italic": "WERK",
+        "badge": "Seit über 10 Jahren im Fach",
+        "claim": "Dauerhaft glatte Haut mit medizinischem 4-Wellen-Diodenlaser.",
+        "fact_number": "4",
+        "fact_label": "Wellenlängen — für nahezu jeden Haut- & Haartyp",
+        "text": "Wohlfühlatmosphäre, ehrliche Beratung und ganz viel Smooth-Feeling — dein Studio in Spreitenbach.",
+        "cta_primary": "Termin buchen",
+        "cta_secondary": "Ergebnisse",
+        "cta_secondary_url": "/pages/vorher-nachher"
+      }
+    },
+    "marquee": {
+      "type": "marquee",
+      "blocks": {
+        "m1": { "type": "item", "settings": { "text": "Diodenlaser-Haarentfernung" } },
+        "m2": { "type": "item", "settings": { "text": "Circadia Facials" } },
+        "m3": { "type": "item", "settings": { "text": "Microneedling" } },
+        "m4": { "type": "item", "settings": { "text": "Brow & Lash Lifting" } },
+        "m5": { "type": "item", "settings": { "text": "Hochzeits-Make-up" } },
+        "m6": { "type": "item", "settings": { "text": "Farb- & Stilberatung" } },
+        "m7": { "type": "item", "settings": { "text": "Dermaplaning" } },
+        "m8": { "type": "item", "settings": { "text": "Homecare-Beratung" } }
+      },
+      "block_order": ["m1", "m2", "m3", "m4", "m5", "m6", "m7", "m8"]
+    },
+    "services": {
+      "type": "services",
+      "settings": { "kicker": "Alles aus einer Hand", "heading": "Drei Handwerke. <em>Ein Anspruch.</em>", "scheme": "light" },
+      "blocks": {
+        "s1": { "type": "card", "settings": { "fallback_asset": "laser-behandlungsraum.jpg", "tag": "Laser", "title": "Haarentfernung", "text": "Dauerhaft glatte Haut — schonend, präzise, individuell auf deine Haut abgestimmt.", "link": "/pages/haarentfernung", "link_label": "Behandlungen & Preise" } },
+        "s2": { "type": "card", "settings": { "fallback_asset": "circadia-produkte.jpg", "tag": "Skin", "title": "Kosmetik", "text": "Facials, Microneedling und Wirkstoffpflege mit Circadia — für ein klares, gesundes Hautbild.", "link": "/pages/kosmetik", "link_label": "Facials & Preise" } },
+        "s3": { "type": "card", "settings": { "fallback_asset": "corina-portrait.jpg", "tag": "Style", "title": "Make-up & Styling", "text": "Visagistik und Farbberatung von der langjährigen Fachschul-Dozentin.", "link": "/pages/make-up-styling", "link_label": "Beratung & Preise" } },
+        "s4": { "type": "card", "settings": { "fallback_asset": "studio-interieur.jpg", "tag": "Studio", "title": "Dein Besuch", "text": "Industriestrasse 173a, Spreitenbach — Termine nach Vereinbarung.", "link": "/pages/kontakt", "link_label": "Kontakt & Anfahrt" } }
+      },
+      "block_order": ["s1", "s2", "s3", "s4"]
+    },
+    "numbers": {
+      "type": "numbers",
+      "blocks": {
+        "n1": { "type": "stat", "settings": { "number": "4", "label": "Wellenlängen" } },
+        "n2": { "type": "stat", "settings": { "number": "21", "label": "Behandlungszonen" } },
+        "n3": { "type": "stat", "settings": { "number": "10+", "label": "Jahre Dozentin" } },
+        "n4": { "type": "stat", "settings": { "number": "1:1", "label": "Persönlich betreut" } }
+      },
+      "block_order": ["n1", "n2", "n3", "n4"]
+    },
+    "ba_teaser": {
+      "type": "before-after",
+      "settings": {
+        "kicker": "Vorher / Nachher",
+        "heading": "Zieh den Regler. <em>Sieh den Unterschied.</em>",
+        "text": "Schon nach wenigen Sitzungen wachsen Haare feiner und langsamer nach. Nach ca. 6–10 Behandlungen ist das Ergebnis langfristig sichtbar.",
+        "note": "Symbolbild — echte Behandlungsresultate folgen",
+        "cta_label": "Beratung buchen",
+        "scheme": "light"
+      },
+      "blocks": {
+        "b1": { "type": "slider", "settings": { "fallback_asset": "vorher-nachher-achsel-STOCK.jpg", "title": "Achseln & kleine Zonen", "text": "Schon nach wenigen Sitzungen wachsen Haare feiner und langsamer nach." } }
+      },
+      "block_order": ["b1"]
+    },
+    "about_teaser": {
+      "type": "about-teaser",
+      "settings": {
+        "kicker": "Über mich",
+        "quote": "«Du sollst dich schön, selbstbewusst und <em>so richtig wohl</em> fühlen in deiner Haut.»",
+        "text": "Pharma-Assistentin EFZ, Kosmetikerin, Visagistin — und über 10 Jahre Dozentin an einer Beautyfachschule. Heute teile ich dieses Wissen mit dir.",
+        "signature": "Corina Blasi",
+        "link_label": "Meine Geschichte",
+        "link_url": "/pages/ueber-mich"
+      }
+    },
+    "cta": {
+      "type": "cta",
+      "settings": {
+        "kicker": "Sag unerwünschten Haaren goodbye",
+        "heading_before": "Bereit für",
+        "heading_after": "<em>dauerhaft</em> glatte Haut?",
+        "pill_fallback": "vorher-nachher-achsel-STOCK.jpg",
+        "cta_label": "Jetzt Termin buchen"
+      }
+    }
+  },
+  "order": ["hero", "marquee", "services", "numbers", "ba_teaser", "about_teaser", "cta"]
+}

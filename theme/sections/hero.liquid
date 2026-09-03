@@ -1,0 +1,52 @@
+<section class="hero">
+  <div class="hero-word rv"><span class="bigword" data-hero-word>{{ section.settings.word_regular }}<i>{{ section.settings.word_italic }}</i></span></div>
+  <div class="wrap-wide hero-grid">
+    <div class="hero-left rv d1">
+      <p class="hero-claim">{{ section.settings.claim }}</p>
+      {%- if section.settings.fact_number != blank -%}
+        <div class="hero-fact"><b>{{ section.settings.fact_number }}</b>{{ section.settings.fact_label }}</div>
+      {%- endif -%}
+    </div>
+    <div class="hero-photo rv d2">
+      <div class="arch kenburns">
+        {%- if section.settings.image -%}
+          {{ section.settings.image | image_url: width: 900 | image_tag: alt: shop.name }}
+        {%- else -%}
+          <img src="{{ 'studio-uebersicht.jpg' | asset_url }}" alt="Das Studio" width="900" height="1200">
+        {%- endif -%}
+      </div>
+      {%- if section.settings.badge != blank -%}<span class="hero-badge">{{ section.settings.badge }}</span>{%- endif -%}
+    </div>
+    <div class="hero-right rv d3">
+      <p class="lede">{{ section.settings.text }}</p>
+      <div class="btn-row">
+        {%- if settings.whatsapp_number != blank -%}
+          <a class="btn btn-ink" href="https://wa.me/{{ settings.whatsapp_number }}" target="_blank" rel="noopener">{{ section.settings.cta_primary }}</a>
+        {%- endif -%}
+        {%- if section.settings.cta_secondary_url != blank -%}
+          <a class="btn btn-line" href="{{ section.settings.cta_secondary_url }}">{{ section.settings.cta_secondary }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero (Riesenwort)",
+  "settings": [
+    { "type": "text", "id": "word_regular", "label": "Riesenwort, normaler Teil", "default": "GLATT" },
+    { "type": "text", "id": "word_italic", "label": "Riesenwort, kursiver Teil", "default": "WERK" },
+    { "type": "image_picker", "id": "image", "label": "Bogen-Bild (Fallback: Studio-Foto)" },
+    { "type": "text", "id": "badge", "label": "Badge am Bild", "default": "Seit über 10 Jahren im Fach" },
+    { "type": "textarea", "id": "claim", "label": "Claim links", "default": "Dauerhaft glatte Haut mit medizinischem 4-Wellen-Diodenlaser." },
+    { "type": "text", "id": "fact_number", "label": "Fakt: Zahl", "default": "4" },
+    { "type": "text", "id": "fact_label", "label": "Fakt: Text", "default": "Wellenlängen — für nahezu jeden Haut- & Haartyp" },
+    { "type": "textarea", "id": "text", "label": "Text rechts", "default": "Wohlfühlatmosphäre, ehrliche Beratung und ganz viel Smooth-Feeling — dein Studio in Spreitenbach." },
+    { "type": "text", "id": "cta_primary", "label": "Primär-Button (WhatsApp)", "default": "Termin buchen" },
+    { "type": "text", "id": "cta_secondary", "label": "Sekundär-Button", "default": "Ergebnisse" },
+    { "type": "url", "id": "cta_secondary_url", "label": "Sekundär-Button Link" }
+  ],
+  "presets": [{ "name": "Hero (Riesenwort)" }]
+}
+{% endschema %}

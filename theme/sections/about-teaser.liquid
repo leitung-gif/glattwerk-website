@@ -1,0 +1,36 @@
+<section class="sec sec-green">
+  <div class="wrap split">
+    <div class="arch rv" style="max-width:420px;justify-self:center;width:100%">
+      {%- if section.settings.image -%}
+        {{ section.settings.image | image_url: width: 840 | image_tag: alt: section.settings.signature }}
+      {%- else -%}
+        <img src="{{ 'corina-portrait.jpg' | asset_url }}" alt="" width="840" height="1050">
+      {%- endif -%}
+    </div>
+    <div class="rv d1">
+      {%- if section.settings.kicker != blank -%}<span class="kicker">{{ section.settings.kicker }}</span>{%- endif -%}
+      <p class="quote">{{ section.settings.quote }}</p>
+      {%- if section.settings.text != blank -%}<p class="lede" style="margin-top:1.6rem">{{ section.settings.text }}</p>{%- endif -%}
+      {%- if section.settings.signature != blank -%}<p class="sig">— {{ section.settings.signature }}</p>{%- endif -%}
+      {%- if section.settings.link_url != blank -%}
+        <div class="btn-row"><a class="btn btn-line" href="{{ section.settings.link_url }}">{{ section.settings.link_label }}</a></div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Über-mich-Teaser (Zitat)",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Über mich" },
+    { "type": "inline_richtext", "id": "quote", "label": "Zitat", "default": "«Du sollst dich schön, selbstbewusst und <em>so richtig wohl</em> fühlen in deiner Haut.»" },
+    { "type": "textarea", "id": "text", "label": "Text" },
+    { "type": "text", "id": "signature", "label": "Signatur", "default": "Corina Blasi" },
+    { "type": "image_picker", "id": "image", "label": "Porträt" },
+    { "type": "text", "id": "link_label", "label": "Link-Text", "default": "Meine Geschichte" },
+    { "type": "url", "id": "link_url", "label": "Link" }
+  ],
+  "presets": [{ "name": "Über-mich-Teaser (Zitat)" }]
+}
+{% endschema %}

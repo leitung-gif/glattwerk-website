@@ -1,0 +1,38 @@
+<section class="sec center" style="padding-bottom:7rem">
+  <div class="wrap">
+    {%- if section.settings.kicker != blank -%}<span class="kicker rv">{{ section.settings.kicker }}</span>{%- endif -%}
+    <h2 class="rv d1" style="font-size:clamp(2.4rem,5.4vw,4.4rem)">
+      {{ section.settings.heading_before }}
+      {%- if section.settings.pill_image or section.settings.pill_fallback != blank -%}
+        <span class="pillimg">
+          {%- if section.settings.pill_image -%}
+            {{ section.settings.pill_image | image_url: width: 400 | image_tag: alt: '' }}
+          {%- else -%}
+            <img src="{{ section.settings.pill_fallback | asset_url }}" alt="" width="400" height="200">
+          {%- endif -%}
+        </span>
+      {%- endif -%}
+      {{ section.settings.heading_after }}
+    </h2>
+    {%- if settings.whatsapp_number != blank -%}
+      <div class="btn-row rv d2" style="justify-content:center">
+        <a class="btn btn-ink" href="https://wa.me/{{ settings.whatsapp_number }}" target="_blank" rel="noopener">{{ section.settings.cta_label }}</a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CTA (mit Pill-Bild)",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Sag unerwünschten Haaren goodbye" },
+    { "type": "inline_richtext", "id": "heading_before", "label": "Titel vor dem Bild", "default": "Bereit für" },
+    { "type": "inline_richtext", "id": "heading_after", "label": "Titel nach dem Bild", "default": "<em>dauerhaft</em> glatte Haut?" },
+    { "type": "image_picker", "id": "pill_image", "label": "Pill-Bild in der Headline" },
+    { "type": "text", "id": "pill_fallback", "label": "Fallback-Asset (Dateiname im Theme)" },
+    { "type": "text", "id": "cta_label", "label": "Button", "default": "Jetzt Termin buchen" }
+  ],
+  "presets": [{ "name": "CTA (mit Pill-Bild)" }]
+}
+{% endschema %}

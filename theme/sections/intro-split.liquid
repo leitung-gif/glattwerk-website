@@ -1,0 +1,46 @@
+<section class="sec {% if section.settings.first %}sec-first{% endif %} {% if section.settings.scheme == 'green' %}sec-green{% endif %}">
+  <div class="wrap split" {% if section.settings.image_position == 'left' %}style="direction:rtl"{% endif %}>
+    <div class="rv" {% if section.settings.image_position == 'left' %}style="direction:ltr"{% endif %}>
+      {%- if section.settings.kicker != blank -%}<span class="kicker">{{ section.settings.kicker }}</span>{%- endif -%}
+      <h1>{{ section.settings.heading }}</h1>
+      {%- if section.settings.text1 != blank -%}<p class="lede" style="margin-top:1.8rem">{{ section.settings.text1 }}</p>{%- endif -%}
+      {%- if section.settings.text2 != blank -%}<p class="lede" style="margin-top:1rem">{{ section.settings.text2 }}</p>{%- endif -%}
+      <div class="btn-row">
+        {%- if settings.whatsapp_number != blank and section.settings.cta_primary != blank -%}
+          <a class="btn btn-ink" href="https://wa.me/{{ settings.whatsapp_number }}" target="_blank" rel="noopener">{{ section.settings.cta_primary }}</a>
+        {%- endif -%}
+        {%- if section.settings.cta_secondary_url != blank -%}
+          <a class="btn btn-line" href="{{ section.settings.cta_secondary_url }}">{{ section.settings.cta_secondary }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+    <div class="arch rv d1" style="max-width:440px;justify-self:center;width:100%;direction:ltr">
+      {%- if section.settings.image -%}
+        {{ section.settings.image | image_url: width: 880 | image_tag: alt: section.settings.heading | strip_html }}
+      {%- else -%}
+        <img src="{{ section.settings.fallback_asset | default: 'studio-uebersicht.jpg' | asset_url }}" alt="" width="880" height="1100">
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Intro mit Bogenbild",
+  "settings": [
+    { "type": "checkbox", "id": "first", "label": "Erste Sektion der Seite (mehr Abstand oben)", "default": true },
+    { "type": "text", "id": "kicker", "label": "Kicker" },
+    { "type": "inline_richtext", "id": "heading", "label": "Titel", "default": "Titel mit <em>Akzent.</em>" },
+    { "type": "textarea", "id": "text1", "label": "Absatz 1" },
+    { "type": "textarea", "id": "text2", "label": "Absatz 2" },
+    { "type": "text", "id": "cta_primary", "label": "Primär-Button (WhatsApp)" },
+    { "type": "text", "id": "cta_secondary", "label": "Sekundär-Button" },
+    { "type": "url", "id": "cta_secondary_url", "label": "Sekundär-Button Link" },
+    { "type": "image_picker", "id": "image", "label": "Bogen-Bild" },
+    { "type": "text", "id": "fallback_asset", "label": "Fallback-Asset (Dateiname im Theme)" },
+    { "type": "select", "id": "image_position", "label": "Bildposition", "options": [ { "value": "right", "label": "Rechts" }, { "value": "left", "label": "Links" } ], "default": "right" },
+    { "type": "select", "id": "scheme", "label": "Farbschema", "options": [ { "value": "light", "label": "Champagner" }, { "value": "green", "label": "Dunkelgrün" } ], "default": "light" }
+  ],
+  "presets": [{ "name": "Intro mit Bogenbild" }]
+}
+{% endschema %}

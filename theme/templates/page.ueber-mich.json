@@ -1,0 +1,31 @@
+{
+  "sections": {
+    "story": {
+      "type": "timeline-about",
+      "settings": {
+        "kicker": "Über mich",
+        "heading": "Hi, ich bin <em>Corina.</em>",
+        "text": "Vom Verständnis für Wirkstoffe zur Leidenschaft für Ästhetik: Mein Weg führte durch Apotheke, Fachschule und Lehrtätigkeit — bis zum eigenen Studio."
+      },
+      "blocks": {
+        "t1": { "type": "station", "settings": { "title": "Pharma-Assistentin EFZ", "text": "Das Fundament: fundiertes Wissen über Haut, Gesundheit und Wirkstoffe." } },
+        "t2": { "type": "station", "settings": { "title": "Kosmetikfachschule", "text": "Die Leidenschaft für Ästhetik wird zum Beruf." } },
+        "t3": { "type": "station", "settings": { "title": "Visagistin & Stylistin", "text": "Ausbildung in Make-up, Styling und Farbberatung." } },
+        "t4": { "type": "station", "settings": { "title": "10+ Jahre Dozentin", "text": "Wissen weitergeben an einer Beautyfachschule — Präzision als Alltag." } },
+        "t5": { "type": "station", "settings": { "title": "Glattwerk Beauty", "text": "Mein Studio in Spreitenbach: alles aus einer Hand, persönlich und ehrlich." } }
+      },
+      "block_order": ["t1", "t2", "t3", "t4", "t5"]
+    },
+    "expertise": {
+      "type": "services",
+      "settings": { "kicker": "Meine Expertise", "heading": "Alles <em>aus einer Hand.</em>", "scheme": "green" },
+      "blocks": {
+        "e1": { "type": "card", "settings": { "fallback_asset": "laser-behandlungsraum.jpg", "tag": "Laser", "title": "Haarentfernung", "text": "4-Wellen-Diodenlaser, individuell abgestimmt.", "link": "/pages/haarentfernung", "link_label": "Mehr" } },
+        "e2": { "type": "card", "settings": { "fallback_asset": "circadia-produkte.jpg", "tag": "Skin", "title": "Kosmetik", "text": "Wissen über Haut & Wirkstoffe aus der Pharma-Ausbildung.", "link": "/pages/kosmetik", "link_label": "Mehr" } },
+        "e3": { "type": "card", "settings": { "fallback_asset": "beauty-wagen.jpg", "tag": "Style", "title": "Make-up & Styling", "text": "10+ Jahre Erfahrung als Dozentin — für deinen Look.", "link": "/pages/make-up-styling", "link_label": "Mehr" } }
+      },
+      "block_order": ["e1", "e2", "e3"]
+    }
+  },
+  "order": ["story", "expertise"]
+}

@@ -1,0 +1,38 @@
+<section class="sec" style="padding-top:1rem">
+  <div class="wrap">
+    <div class="rv">
+      {%- if section.settings.kicker != blank -%}<span class="kicker">{{ section.settings.kicker }}</span>{%- endif -%}
+      <h2>{{ section.settings.heading }}</h2>
+    </div>
+    <div class="steps">
+      {%- for block in section.blocks -%}
+        <div class="step rv {% cycle '', 'd1', 'd2' %}" {{ block.shopify_attributes }}>
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.text }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ablauf-Schritte",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "So läuft's" },
+    { "type": "inline_richtext", "id": "heading", "label": "Titel", "default": "Dein Weg zur <em>glatten Haut</em>" }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Schritt",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Titel", "default": "Beratung" },
+        { "type": "textarea", "id": "text", "label": "Text" }
+      ]
+    }
+  ],
+  "max_blocks": 5,
+  "presets": [{ "name": "Ablauf-Schritte" }]
+}
+{% endschema %}

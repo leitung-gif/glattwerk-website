@@ -11,6 +11,22 @@ Design-Prototyp für die neue Website von **Glattwerk Beauty** (Corina Blasi, In
 | `index.html` | Kompletter Prototyp, eine Datei, Bilder eingebettet. 7 Seiten über Hash-Navigation (Home, Über mich, Haarentfernung, Kosmetik, Make-up & Styling, Vorher/Nachher, Kontakt) |
 | `assets/fotos/` | Original-Bildmaterial der bisherigen Canva-Site (weboptimiert, max. 900 px) |
 | `assets/preislisten-original/` | Die vier Preislisten-Grafiken der alten Site als Referenz — alle Preise sind im Prototyp bereits als HTML-Tabellen umgesetzt |
+| `theme/` | **Shopify-Theme «Glattwerk Champagne»** (Online Store 2.0) — 1:1-Übersetzung des Prototyps in Sections mit Customizer-Settings. `shopify theme check`: 0 Errors |
+
+## Shopify-Deployment (sobald der Dev-Store existiert)
+
+```bash
+cd theme
+shopify theme dev --store <dev-store>.myshopify.com     # Live-Vorschau
+shopify theme push --store <dev-store>.myshopify.com    # Hochladen
+```
+
+Danach im Admin:
+1. **Seiten anlegen** mit diesen Handles (Template wird automatisch zugeordnet): `haarentfernung`, `kosmetik`, `make-up-styling`, `ueber-mich`, `vorher-nachher`, `kontakt` — Templates im Seiten-Editor unter «Theme-Vorlage» auswählen (`page.haarentfernung` usw.)
+2. **Menü `main-menu`** befüllen: Home, Über mich, Haarentfernung, Kosmetik, Make-up & Styling, Vorher/Nachher, Kontakt; Footer-Menü `footer` analog
+3. Bilder sind als Theme-Assets mitgeliefert (Fallbacks) — für den produktiven Betrieb im Customizer echte Bilder über die Bild-Wähler setzen
+4. Kontaktformular nutzt das native Shopify-Kontaktformular (Mails gehen an die Store-Absenderadresse)
+5. Preise, Texte, Farben, Kontaktdaten: alles im Customizer editierbar (Theme-Settings → Markenfarben / Kontakt & Studio)
 
 ## Shopify-Mapping
 

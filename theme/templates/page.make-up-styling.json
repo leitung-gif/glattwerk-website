@@ -1,0 +1,40 @@
+{
+  "sections": {
+    "intro": {
+      "type": "intro-split",
+      "settings": {
+        "first": true,
+        "kicker": "Make-up & Styling",
+        "heading": "Entdecke, was <em>wirklich</em> zu dir passt.",
+        "text1": "Individuell abgestimmtes Make-up und professionelle Farbberatung — für mehr Sicherheit, Stil und ein Auftreten, das sich einfach richtig anfühlt.",
+        "cta_primary": "Beratung anfragen",
+        "fallback_asset": "beauty-wagen.jpg",
+        "image_position": "right",
+        "scheme": "light"
+      }
+    },
+    "preise": {
+      "type": "price-list",
+      "settings": {
+        "kicker": "Preisliste",
+        "heading": "Make-up & Beratung",
+        "show_tabs": false,
+        "cta_label": "Beratung anfragen",
+        "scheme": "light"
+      },
+      "blocks": {
+        "g1": { "type": "group", "settings": { "title": "Make-up für jeden Anlass", "tab": "a" } },
+        "m1": { "type": "row", "settings": { "label": "Persönliche Schminkberatung · ca. 2 Std.", "desc": "Inkl. Tipps für zuhause", "price": "CHF 250.–", "tab": "a" } },
+        "m2": { "type": "row", "settings": { "label": "Tages- & Abend-Make-up", "price": "auf Anfrage", "tab": "a" } },
+        "m3": { "type": "row", "settings": { "label": "Event-Make-up", "price": "auf Anfrage", "tab": "a" } },
+        "m4": { "type": "row", "settings": { "label": "Hochzeits-Make-up", "desc": "Inkl. Probeschminken", "price": "ab CHF 450.–", "tab": "a" } },
+        "m5": { "type": "row", "settings": { "label": "Hochzeits-Hair & Make-up", "desc": "Inkl. Probetermin", "price": "ab CHF 600.–", "tab": "a" } },
+        "g2": { "type": "group", "settings": { "title": "Farb- & Stilberatung", "tab": "a" } },
+        "s1": { "type": "row", "settings": { "label": "Farb- & Stilberatung Damen · 3 Std.", "desc": "Farbanalyse, typgerechte Stilberatung, Make-up-Empfehlungen, inkl. Dossier", "price": "CHF 420.–", "tab": "a" } },
+        "s2": { "type": "row", "settings": { "label": "Imageberatung Herren · 2 Std.", "desc": "Typgerechte Stil- und Farbberatung, inkl. Dossier", "price": "CHF 320.–", "tab": "a" } }
+      },
+      "block_order": ["g1", "m1", "m2", "m3", "m4", "m5", "g2", "s1", "s2"]
+    }
+  },
+  "order": ["intro", "preise"]
+}

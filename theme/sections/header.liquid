@@ -1,0 +1,36 @@
+<header class="site-header">
+  <div class="nav-inner">
+    <a class="brand" href="{{ routes.root_url }}">
+      {%- if section.settings.logo -%}
+        {{ section.settings.logo | image_url: width: 84 | image_tag: alt: shop.name }}
+      {%- else -%}
+        <img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" width="42" height="42">
+      {%- endif -%}
+      <span class="brand-name">{{ section.settings.brand_title }}<small>{{ section.settings.brand_sub }}</small></span>
+    </a>
+    <button class="burger" aria-label="Menü">☰</button>
+    <nav class="site-nav">
+      <ul>
+        {%- for link in section.settings.menu.links -%}
+          <li><a href="{{ link.url }}" {% if link.active %}class="active"{% endif %}>{{ link.title }}</a></li>
+        {%- endfor -%}
+        {%- if settings.whatsapp_number != blank -%}
+          <li><a class="nav-cta" href="https://wa.me/{{ settings.whatsapp_number }}" target="_blank" rel="noopener">{{ section.settings.cta_label }}</a></li>
+        {%- endif -%}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    { "type": "image_picker", "id": "logo", "label": "Logo (Fallback: mitgeliefertes Logo)" },
+    { "type": "text", "id": "brand_title", "label": "Markenname", "default": "Glattwerk" },
+    { "type": "text", "id": "brand_sub", "label": "Unterzeile", "default": "BEAUTY · SPREITENBACH" },
+    { "type": "link_list", "id": "menu", "label": "Navigation", "default": "main-menu" },
+    { "type": "text", "id": "cta_label", "label": "Buchungs-Button", "default": "Termin buchen" }
+  ]
+}
+{% endschema %}

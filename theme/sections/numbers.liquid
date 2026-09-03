@@ -1,0 +1,35 @@
+<section class="sec-green" style="padding:0">
+  <div class="numbers">
+    {%- for block in section.blocks -%}
+      <div class="num rv {% cycle '', 'd1', 'd2', 'd3' %}" {{ block.shopify_attributes }}>
+        <b>{{ block.settings.number }}</b><span>{{ block.settings.label }}</span>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Zahlenband",
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Zahl",
+      "settings": [
+        { "type": "text", "id": "number", "label": "Zahl", "default": "4" },
+        { "type": "text", "id": "label", "label": "Bezeichnung", "default": "Wellenlängen" }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [{
+    "name": "Zahlenband",
+    "blocks": [
+      { "type": "stat", "settings": { "number": "4", "label": "Wellenlängen" } },
+      { "type": "stat", "settings": { "number": "21", "label": "Behandlungszonen" } },
+      { "type": "stat", "settings": { "number": "10+", "label": "Jahre Dozentin" } },
+      { "type": "stat", "settings": { "number": "1:1", "label": "Persönlich betreut" } }
+    ]
+  }]
+}
+{% endschema %}

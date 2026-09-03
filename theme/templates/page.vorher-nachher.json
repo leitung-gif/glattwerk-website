@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "ba": {
+      "type": "before-after",
+      "settings": {
+        "kicker": "Vorher / Nachher",
+        "heading": "Zieh den Regler — <em>sieh selbst.</em>",
+        "text": "Schritt für Schritt zu glatter Haut und einem verbesserten Hautbild.",
+        "note": "Symbolbilder — echte Behandlungsresultate aus dem Studio folgen.",
+        "cta_label": "Deine Behandlung starten",
+        "scheme": "light"
+      },
+      "blocks": {
+        "b1": { "type": "slider", "settings": { "fallback_asset": "vorher-nachher-achsel-STOCK.jpg", "title": "Achseln & kleine Zonen", "text": "Schon nach wenigen Sitzungen wachsen Haare feiner und langsamer nach." } },
+        "b2": { "type": "slider", "settings": { "fallback_asset": "vorher-nachher-gesicht-STOCK.jpg", "title": "Gesicht", "text": "Frischere, ausgeglichenere Haut — Unreinheiten sichtbar verbessert." } },
+        "b3": { "type": "slider", "settings": { "fallback_asset": "vorher-nachher-oberkoerper-STOCK.jpg", "title": "Oberkörper & grosse Zonen", "text": "Nach 6–10 Behandlungen langfristig sichtbar." } }
+      },
+      "block_order": ["b1", "b2", "b3"]
+    }
+  },
+  "order": ["ba"]
+}

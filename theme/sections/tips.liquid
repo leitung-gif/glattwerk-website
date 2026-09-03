@@ -1,0 +1,50 @@
+<section class="sec">
+  <div class="wrap">
+    <div class="center rv">
+      {%- if section.settings.kicker != blank -%}<span class="kicker">{{ section.settings.kicker }}</span>{%- endif -%}
+      <h2>{{ section.settings.heading }}</h2>
+    </div>
+    <div class="tips-grid">
+      {%- for block in section.blocks -%}
+        <div class="tip rv {% cycle '', 'd1', 'd2' %}" {{ block.shopify_attributes }}>
+          <h4>{{ block.settings.title }}</h4>
+          <ul>
+            {%- assign items = block.settings.items | newline_to_br | split: '<br />' -%}
+            {%- for item in items -%}
+              {%- assign t = item | strip -%}
+              {%- if t != blank -%}<li>{{ t }}</li>{%- endif -%}
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endfor -%}
+    </div>
+    {%- if settings.whatsapp_number != blank and section.settings.cta_label != blank -%}
+      <div class="btn-row rv" style="justify-content:center">
+        <a class="btn btn-ink" href="https://wa.me/{{ settings.whatsapp_number }}" target="_blank" rel="noopener">{{ section.settings.cta_label }}</a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Pflegetipps-Karten",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Pflegetipps" },
+    { "type": "inline_richtext", "id": "heading", "label": "Titel", "default": "Nach dem Lasern: <em>so bleibt's schön.</em>" },
+    { "type": "text", "id": "cta_label", "label": "CTA-Button", "default": "Termin buchen" }
+  ],
+  "blocks": [
+    {
+      "type": "tip",
+      "name": "Karte",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Titel", "default": "Direkt danach" },
+        { "type": "textarea", "id": "items", "label": "Punkte (eine Zeile pro Punkt)" }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [{ "name": "Pflegetipps-Karten" }]
+}
+{% endschema %}

@@ -1,0 +1,37 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Glattwerk Champagne",
+    "theme_version": "1.0.0",
+    "theme_author": "Lorien Group",
+    "theme_documentation_url": "https://github.com/leitung-gif/glattwerk-website",
+    "theme_support_url": "https://github.com/leitung-gif/glattwerk-website"
+  },
+  {
+    "name": "Markenfarben",
+    "settings": [
+      { "type": "color", "id": "color_bg", "label": "Hintergrund (Champagner)", "default": "#f1eadb" },
+      { "type": "color", "id": "color_card", "label": "Karten", "default": "#faf6ec" },
+      { "type": "color", "id": "color_ink", "label": "Text (Tinte)", "default": "#17271d" },
+      { "type": "color", "id": "color_ink_soft", "label": "Text gedämpft", "default": "#5b6a5e" },
+      { "type": "color", "id": "color_green", "label": "Dunkelgrün (Kontrastblöcke)", "default": "#17301f" },
+      { "type": "color", "id": "color_gold", "label": "Gold", "default": "#ad861f" },
+      { "type": "color", "id": "color_gold_deep", "label": "Gold dunkel", "default": "#8a6b23" },
+      { "type": "color", "id": "color_gold_bright", "label": "Gold hell (auf Grün)", "default": "#d8b45e" }
+    ]
+  },
+  {
+    "name": "Kontakt & Studio",
+    "settings": [
+      { "type": "text", "id": "phone_display", "label": "Telefon (Anzeige)", "default": "076 349 48 44" },
+      { "type": "text", "id": "phone_e164", "label": "Telefon (Linkformat, z. B. +41763494844)", "default": "+41763494844" },
+      { "type": "text", "id": "whatsapp_number", "label": "WhatsApp-Nummer (ohne +, z. B. 41763494844)", "default": "41763494844" },
+      { "type": "text", "id": "email", "label": "E-Mail", "default": "info@glattwerkbeauty.ch" },
+      { "type": "text", "id": "instagram_handle", "label": "Instagram-Handle", "default": "@glattwerk.beauty" },
+      { "type": "url", "id": "instagram_url", "label": "Instagram-Link" },
+      { "type": "textarea", "id": "address", "label": "Adresse", "default": "Industriestrasse 173a\n8957 Spreitenbach" },
+      { "type": "text", "id": "hours", "label": "Termine/Öffnungszeiten", "default": "Nach Vereinbarung" },
+      { "type": "url", "id": "maps_url", "label": "Google-Maps-Link" }
+    ]
+  }
+]

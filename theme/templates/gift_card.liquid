@@ -1,0 +1,10 @@
+{% layout none %}
+<!doctype html>
+<html lang="de">
+<head><meta charset="utf-8"><title>{{ shop.name }} — Gutschein</title></head>
+<body style="font-family:sans-serif;text-align:center;padding:4rem 1rem">
+  <h1>{{ shop.name }}</h1>
+  <p>Gutschein über {{ gift_card.initial_value | money }}</p>
+  <p>Code: <strong>{{ gift_card.code | format_code }}</strong></p>
+</body>
+</html>
