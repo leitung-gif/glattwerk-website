@@ -10,11 +10,17 @@
     if (heroWord && !reduced) heroWord.style.transform = 'translateY(' + Math.min(window.scrollY * 0.18, 140) + 'px)';
   }, { passive: true });
 
-  /* Burger */
+  /* Mobile-Menü: öffnen/schliessen mit Scroll-Lock */
   var burger = document.querySelector('.burger');
-  if (burger) burger.addEventListener('click', function () {
-    document.querySelector('.site-nav').classList.toggle('open');
-  });
+  var nav = document.querySelector('.site-nav');
+  function closeNav() { if (nav) { nav.classList.remove('open'); document.body.style.overflow = ''; if (burger) burger.setAttribute('aria-expanded', 'false'); } }
+  if (burger && nav) {
+    burger.addEventListener('click', function () { nav.classList.add('open'); document.body.style.overflow = 'hidden'; burger.setAttribute('aria-expanded', 'true'); });
+    var closeBtn = nav.querySelector('.nav-close');
+    if (closeBtn) closeBtn.addEventListener('click', closeNav);
+    nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeNav); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeNav(); });
+  }
 
   /* Scroll-Reveals — Above-the-fold sofort */
   var io = ('IntersectionObserver' in window) ? new IntersectionObserver(function (es) {

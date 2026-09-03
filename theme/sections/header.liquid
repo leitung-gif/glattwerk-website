@@ -8,8 +8,9 @@
       {%- endif -%}
       <span class="brand-name">{{ section.settings.brand_title }}<small>{{ section.settings.brand_sub }}</small></span>
     </a>
-    <button class="burger" aria-label="Menü" aria-expanded="false">☰</button>
+    <button class="burger" aria-label="Menü öffnen" aria-expanded="false">☰</button>
     <nav class="site-nav" aria-label="Hauptnavigation">
+      <button class="nav-close" aria-label="Menü schliessen">✕</button>
       <ul>
         {%- for link in section.settings.menu.links -%}
           {%- if link.links.size > 0 -%}
