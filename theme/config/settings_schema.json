@@ -33,5 +33,14 @@
       { "type": "text", "id": "hours", "label": "Termine/Öffnungszeiten", "default": "Nach Vereinbarung" },
       { "type": "url", "id": "maps_url", "label": "Google-Maps-Link" }
     ]
+  },
+  {
+    "name": "SEO",
+    "settings": [
+      { "type": "textarea", "id": "seo_default_description", "label": "Standard-Meta-Description", "default": "Glattwerk Beauty in Spreitenbach: dauerhafte Laser-Haarentfernung mit medizinischem 4-Wellen-Diodenlaser, Circadia-Facials, Microneedling sowie Make-up- und Farbberatung. Persönlich, ehrlich, auf dich abgestimmt." },
+      { "type": "image_picker", "id": "seo_share_image", "label": "Social-Share-Bild (1200×630)" },
+      { "type": "text", "id": "geo_lat", "label": "Studio-Breitengrad", "default": "47.4167", "info": "Für Google Maps/Local SEO — exakten Wert aus Google Maps übernehmen" },
+      { "type": "text", "id": "geo_lng", "label": "Studio-Längengrad", "default": "8.3667" }
+    ]
   }
 ]

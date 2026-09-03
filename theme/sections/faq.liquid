@@ -1,0 +1,64 @@
+<section class="sec sec-first">
+  <div class="wrap" style="max-width:880px">
+    <div class="center rv">
+      {%- if section.settings.kicker != blank -%}<span class="kicker">{{ section.settings.kicker }}</span>{%- endif -%}
+      <h1>{{ section.settings.heading }}</h1>
+      {%- if section.settings.text != blank -%}<p class="lede" style="margin:1.4rem auto 0">{{ section.settings.text }}</p>{%- endif -%}
+    </div>
+    <div class="faq-list rv d1">
+      {%- for block in section.blocks -%}
+        <details class="faq" {{ block.shopify_attributes }} {% if forloop.first and section.settings.open_first %}open{% endif %}>
+          <summary><span>{{ block.settings.question }}</span><i class="faq-icon" aria-hidden="true"></i></summary>
+          <div class="faq-a">{{ block.settings.answer }}</div>
+        </details>
+      {%- endfor -%}
+    </div>
+    {%- if settings.whatsapp_number != blank and section.settings.cta_label != blank -%}
+      <div class="btn-row rv" style="justify-content:center">
+        <a class="btn btn-ink" href="https://wa.me/{{ settings.whatsapp_number }}" target="_blank" rel="noopener">{{ section.settings.cta_label }}</a>
+      </div>
+    {%- endif -%}
+  </div>
+
+  {% # FAQPage-Schema für Google & KI-Suchen %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {%- for block in section.blocks -%}
+      {
+        "@type": "Question",
+        "name": {{ block.settings.question | json }},
+        "acceptedAnswer": { "@type": "Answer", "text": {{ block.settings.answer | strip_html | json }} }
+      }{% unless forloop.last %},{% endunless %}
+      {%- endfor -%}
+    ]
+  }
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ (Akkordeon)",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Gut zu wissen" },
+    { "type": "inline_richtext", "id": "heading", "label": "Titel", "default": "Deine Fragen, <em>ehrlich beantwortet.</em>" },
+    { "type": "textarea", "id": "text", "label": "Einleitung" },
+    { "type": "checkbox", "id": "open_first", "label": "Erste Frage geöffnet", "default": true },
+    { "type": "text", "id": "cta_label", "label": "CTA-Button", "default": "Frag mich direkt" }
+  ],
+  "blocks": [
+    {
+      "type": "qa",
+      "name": "Frage",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Frage", "default": "Wie viele Sitzungen brauche ich?" },
+        { "type": "richtext", "id": "answer", "label": "Antwort", "default": "<p>Das hängt von Körperregion und Haarstruktur ab.</p>" }
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [{ "name": "FAQ (Akkordeon)" }]
+}
+{% endschema %}

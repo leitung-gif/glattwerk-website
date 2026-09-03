@@ -1,5 +1,21 @@
 <meta charset="utf-8">
 <title>Glattwerk Beauty</title>
+<meta name="description" content="Glattwerk Beauty in Spreitenbach: dauerhafte Laser-Haarentfernung mit medizinischem 4-Wellen-Diodenlaser, Circadia-Facials, Microneedling sowie Make-up- und Farbberatung. Persönlich, ehrlich, auf dich abgestimmt.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BeautySalon",
+  "name": "Glattwerk Beauty",
+  "telephone": "+41763494844",
+  "email": "info@glattwerkbeauty.ch",
+  "priceRange": "CHF 25–980",
+  "address": { "@type": "PostalAddress", "streetAddress": "Industriestrasse 173a", "addressLocality": "Spreitenbach", "postalCode": "8957", "addressRegion": "AG", "addressCountry": "CH" },
+  "geo": { "@type": "GeoCoordinates", "latitude": 47.4167, "longitude": 8.3667 },
+  "areaServed": ["Spreitenbach", "Dietikon", "Limmattal", "Baden", "Wettingen", "Zürich"],
+  "sameAs": ["https://www.instagram.com/glattwerk.beauty"],
+  "knowsAbout": ["Laser-Haarentfernung", "Diodenlaser", "Kosmetik", "Facials", "Microneedling", "Make-up", "Farbberatung"]
+}
+</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Jost:wght@300;400;500&display=swap">
 <style>
 /* ============================================================
@@ -265,6 +281,76 @@ footer li{list-style:none;padding:.2rem 0}
 .fab{position:fixed;right:1.4rem;bottom:1.4rem;z-index:95;width:58px;height:58px;border-radius:50%;background:var(--green);color:var(--champagne);display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 12px 34px rgba(23,39,29,.4);transition:transform .25s var(--ease),background .25s}
 .fab:hover{transform:translateY(-4px) scale(1.05);background:var(--gold-deep)}
 .fab svg{width:28px;height:28px}
+
+/* ---------- v3.1: Dropdown-Navigation ---------- */
+nav .has-sub{position:relative}
+nav .caret{font-size:.62em;opacity:.7;margin-left:.15rem}
+nav .sub{
+  position:absolute;top:100%;left:50%;transform:translate(-50%,8px);
+  min-width:230px;padding:.7rem 0;margin-top:.6rem;list-style:none;
+  background:var(--card);border:1px solid var(--line);border-radius:16px;
+  box-shadow:0 22px 54px rgba(23,39,29,.16);
+  opacity:0;visibility:hidden;transition:opacity .22s var(--ease),transform .22s var(--ease),visibility .22s;
+  display:block
+}
+nav .sub::before{content:"";position:absolute;top:-.7rem;left:0;right:0;height:.7rem}
+nav .has-sub:hover .sub,nav .has-sub:focus-within .sub{opacity:1;visibility:visible;transform:translate(-50%,0)}
+nav .sub li{padding:0;width:auto;text-align:left}
+nav .sub a{display:block;padding:.55rem 1.4rem;font-size:.74rem;letter-spacing:.12em;color:var(--ink-soft)}
+nav .sub a::after{display:none}
+nav .sub a:hover,nav .sub a.active{color:var(--gold-deep);background:rgba(173,134,31,.07)}
+@media(max-width:1220px){
+  nav .sub{position:static;transform:none;opacity:1;visibility:visible;box-shadow:none;border:none;background:none;padding:.2rem 0 0;min-width:0;text-align:center}
+  nav .sub li{text-align:center}
+  nav .sub a{font-size:.8rem;padding:.35rem 0}
+  nav .caret{display:none}
+}
+
+/* ---------- v3.1: FAQ-Akkordeon ---------- */
+.faq-list{margin-top:2.8rem;border-top:1px solid var(--line)}
+.faq{border-bottom:1px solid var(--line)}
+.faq summary{
+  display:flex;justify-content:space-between;align-items:center;gap:1.5rem;
+  padding:1.4rem .2rem;cursor:pointer;list-style:none;
+  font-family:var(--font-d);font-size:1.25rem;font-weight:500;color:var(--ink);
+  transition:color .2s
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--gold-deep)}
+.faq summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.faq-icon{position:relative;flex:0 0 30px;height:30px;border:1px solid var(--line-gold);border-radius:50%}
+.faq-icon::before,.faq-icon::after{content:"";position:absolute;top:50%;left:50%;background:var(--gold-deep);transition:transform .25s var(--ease)}
+.faq-icon::before{width:12px;height:1.5px;transform:translate(-50%,-50%)}
+.faq-icon::after{width:1.5px;height:12px;transform:translate(-50%,-50%)}
+.faq[open] .faq-icon::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq[open] summary{color:var(--gold-deep)}
+.faq-a{padding:0 .2rem 1.6rem;color:var(--ink-soft);max-width:44rem}
+.faq-a p{margin:.4em 0}
+.faq-a a{color:var(--gold-deep)}
+
+/* ---------- v3.1: Journal ---------- */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem 1.8rem;margin-top:3.2rem}
+@media(max-width:980px){.blog-grid{grid-template-columns:1fr}}
+.post-card{display:block;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:22px;padding:2.2rem 2rem;transition:transform .25s var(--ease),box-shadow .25s}
+.post-card:hover{transform:translateY(-4px);box-shadow:0 22px 54px rgba(23,39,29,.12)}
+.post-meta{font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:.6rem}
+.post-card h3{font-size:1.55rem;line-height:1.18}
+.post-excerpt{font-size:.92rem;color:var(--ink-soft);margin:.7rem 0 1rem}
+.article-body{max-width:44rem;color:var(--ink-soft)}
+.article-body h2{font-size:1.7rem;margin:1.8em 0 .5em;color:var(--ink)}
+.article-body p{margin:.8em 0}
+.article-body ul{margin:.8em 0 .8em 1.3em}
+.article-body li{margin:.3em 0}
+.article-body em{font-style:italic}
+
+/* ---------- v3.1: Design-Schärfung ---------- */
+section{padding:5.5rem 0}
+.bigword{letter-spacing:-.03em}
+.arch{box-shadow:0 22px 55px rgba(23,39,29,.16)}
+.btn-ink::after,.btn-line::after{content:"→";display:inline-block;margin-left:.6rem;transition:transform .25s var(--ease)}
+.btn-ink:hover::after,.btn-line:hover::after{transform:translateX(4px)}
+.hscroll{scrollbar-width:none}
+.hscroll::-webkit-scrollbar{display:none}
 </style>
 
 <!-- ======================= HEADER → sections/header.liquid ======================= -->
@@ -278,11 +364,18 @@ footer li{list-style:none;padding:.2rem 0}
     <nav>
       <ul>
         <li><a href="#home" data-nav="home">Home</a></li>
-        <li><a href="#ueber-mich" data-nav="ueber-mich">Über mich</a></li>
-        <li><a href="#haarentfernung" data-nav="haarentfernung">Haarentfernung</a></li>
-        <li><a href="#kosmetik" data-nav="kosmetik">Kosmetik</a></li>
-        <li><a href="#makeup" data-nav="makeup">Make-up &amp; Styling</a></li>
+        <li class="has-sub">
+          <a href="#haarentfernung" data-group="behandlungen" aria-haspopup="true">Behandlungen <span class="caret" aria-hidden="true">▾</span></a>
+          <ul class="sub">
+            <li><a href="#haarentfernung" data-nav="haarentfernung">Haarentfernung</a></li>
+            <li><a href="#kosmetik" data-nav="kosmetik">Kosmetik</a></li>
+            <li><a href="#makeup" data-nav="makeup">Make-up &amp; Styling</a></li>
+          </ul>
+        </li>
         <li><a href="#ergebnisse" data-nav="ergebnisse">Vorher / Nachher</a></li>
+        <li><a href="#ueber-mich" data-nav="ueber-mich">Über mich</a></li>
+        <li><a href="#journal" data-nav="journal">Journal</a></li>
+        <li><a href="#faq" data-nav="faq">FAQ</a></li>
         <li><a href="#kontakt" data-nav="kontakt">Kontakt</a></li>
         <li><a class="nav-cta" href="https://wa.me/41763494844" target="_blank" rel="noopener">Termin buchen</a></li>
       </ul>
@@ -757,6 +850,188 @@ footer li{list-style:none;padding:.2rem 0}
     </div>
   </section>
 </div>
+
+<!-- ======================= FAQ ======================= -->
+<div class="page" id="page-faq">
+  <section style="padding-top:8.5rem" data-shopify="faq">
+    <div class="wrap" style="max-width:880px">
+      <div class="center rv">
+        <span class="kicker">Gut zu wissen</span>
+        <h1>Deine Fragen, <em>ehrlich beantwortet.</em></h1>
+        <p class="lede" style="margin:1.4rem auto 0">Die häufigsten Fragen rund um Laser-Haarentfernung, Kosmetik und deinen Besuch im Studio. Deine Frage fehlt? Schreib mir direkt.</p>
+      </div>
+      <div class="faq-list rv d1">
+        <details class="faq" open>
+          <summary><span>Wie viele Sitzungen brauche ich für dauerhaft glatte Haut?</span><i class="faq-icon" aria-hidden="true"></i></summary>
+          <div class="faq-a"><p>Je nach Körperregion und Haarstruktur sind ca. 6–10 Behandlungen nötig, im Abstand von 4–8 Wochen. Schon nach wenigen Sitzungen wachsen die Haare feiner und langsamer nach. Deinen persönlichen Behandlungsplan erstellen wir gemeinsam bei der Beratung.</p></div>
+        </details>
+        <details class="faq">
+          <summary><span>Für wen eignet sich der 4-Wellen-Diodenlaser?</span><i class="faq-icon" aria-hidden="true"></i></summary>
+          <div class="faq-a"><p>Dank der Kombination aus vier Wellenlängen können verschiedene Haut- und Haartypen effektiv und schonend behandelt werden — auch empfindliche Bereiche wie Gesicht oder Intimzone. Ob die Behandlung für dich passt, klären wir ehrlich und unverbindlich in der persönlichen Beratung mit Hautanalyse.</p></div>
+        </details>
+        <details class="faq">
+          <summary><span>Was kostet die Laser-Haarentfernung?</span><i class="faq-icon" aria-hidden="true"></i></summary>
+          <div class="faq-a"><p>Einzelne Zonen gibt es ab CHF 45.–, Ganzkörper (4 Zonen) kostet CHF 290.– für Damen und CHF 320.– für Herren. Die komplette Übersicht findest du auf der <a href="#haarentfernung">Haarentfernungs-Seite</a>.</p></div>
+        </details>
+        <details class="faq">
+          <summary><span>Wie bereite ich mich auf die Behandlung vor?</span><i class="faq-icon" aria-hidden="true"></i></summary>
+          <div class="faq-a"><p>Wichtig ist vor allem: in den Wochen vor dem Termin die Haare nicht zupfen, wachsen oder epilieren (rasieren ist erlaubt) und direkte Sonne sowie Solarium meiden. Alle Details zu deiner Vorbereitung besprechen wir bei der Beratung.</p></div>
+        </details>
+        <details class="faq">
+          <summary><span>Was muss ich nach dem Lasern beachten?</span><i class="faq-icon" aria-hidden="true"></i></summary>
+          <div class="faq-a"><p>In den ersten 24–48 Stunden Sauna, Sport und Sonne meiden, die Haut kühlen und mit milder Pflege (z. B. Aloe Vera) beruhigen, danach konsequent LSF 50+. Die behandelten Haare fallen nach 7–21 Tagen von selbst aus. Die komplette Anleitung findest du in den <a href="#haarentfernung">Pflegetipps</a> — und du bekommst sie nach der Behandlung von mir mit.</p></div>
+        </details>
+        <details class="faq">
+          <summary><span>Ist die Behandlung schmerzhaft?</span><i class="faq-icon" aria-hidden="true"></i></summary>
+          <div class="faq-a"><p>Die meisten empfinden die Behandlung als gut aushaltbar — ein Wärmegefühl und leichte Rötungen danach sind normal und klingen rasch ab. Ich passe jede Behandlung individuell an deine Haut an und nehme mir Zeit, damit du dich rundum wohlfühlst.</p></div>
+        </details>
+        <details class="faq">
+          <summary><span>Behandelst du auch Herren?</span><i class="faq-icon" aria-hidden="true"></i></summary>
+          <div class="faq-a"><p>Ja — für Herren gibt es eine eigene Preisliste, von Gesicht über Rücken bis Beine. Einzig die Intimzone ist bei Herren nicht im Angebot.</p></div>
+        </details>
+        <details class="faq">
+          <summary><span>Wie buche ich einen Termin?</span><i class="faq-icon" aria-hidden="true"></i></summary>
+          <div class="faq-a"><p>Am einfachsten per WhatsApp oder Telefon unter 076 349 48 44 — oder über das <a href="#kontakt">Kontaktformular</a>. Termine nach Vereinbarung, das Studio ist an der Industriestrasse 173a in Spreitenbach.</p></div>
+        </details>
+      </div>
+      <div class="btn-row rv" style="justify-content:center">
+        <a class="btn btn-ink" href="https://wa.me/41763494844" target="_blank" rel="noopener">Frag mich direkt</a>
+      </div>
+    </div>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Wie viele Sitzungen brauche ich für dauerhaft glatte Haut?", "acceptedAnswer": { "@type": "Answer", "text": "Je nach Körperregion und Haarstruktur sind ca. 6–10 Behandlungen nötig, im Abstand von 4–8 Wochen." } },
+        { "@type": "Question", "name": "Für wen eignet sich der 4-Wellen-Diodenlaser?", "acceptedAnswer": { "@type": "Answer", "text": "Dank vier Wellenlängen können verschiedene Haut- und Haartypen effektiv und schonend behandelt werden, auch empfindliche Bereiche." } },
+        { "@type": "Question", "name": "Was kostet die Laser-Haarentfernung?", "acceptedAnswer": { "@type": "Answer", "text": "Einzelne Zonen ab CHF 45.–, Ganzkörper (4 Zonen) CHF 290.– für Damen und CHF 320.– für Herren." } },
+        { "@type": "Question", "name": "Was muss ich nach dem Lasern beachten?", "acceptedAnswer": { "@type": "Answer", "text": "24–48 Stunden Sauna, Sport und Sonne meiden, kühlen, milde Pflege, danach täglich LSF 50+. Haare fallen nach 7–21 Tagen von selbst aus." } },
+        { "@type": "Question", "name": "Behandelst du auch Herren?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, mit eigener Preisliste. Einzig die Intimzone ist bei Herren nicht im Angebot." } }
+      ]
+    }
+    </script>
+  </section>
+</div>
+
+<!-- ======================= JOURNAL (Blog) ======================= -->
+<div class="page" id="page-journal">
+  <section style="padding-top:8.5rem" data-shopify="blog">
+    <div class="wrap">
+      <div class="center rv">
+        <span class="kicker">Beauty-Journal</span>
+        <h1>Wissen aus <em>dem Studio.</em></h1>
+        <p class="lede" style="margin:1.4rem auto 0">Laser, Hautpflege und Make-up — ehrlich erklärt, ohne Halbwissen.</p>
+      </div>
+      <div class="blog-grid">
+        <a class="post-card rv" href="#artikel-laser">
+          <p class="post-meta">Laser</p>
+          <h3>Wie funktioniert Laser-Haarentfernung mit dem 4-Wellen-Diodenlaser?</h3>
+          <p class="post-excerpt">Das Prinzip hinter dauerhaft glatter Haut: Warum der Laser an der Wurzel ansetzt — und wozu es vier Wellenlängen braucht.</p>
+          <span class="hs-go">Weiterlesen</span>
+        </a>
+        <a class="post-card rv d1" href="#artikel-sonne">
+          <p class="post-meta">Laser</p>
+          <h3>Lasern und Sonne: Was du vor und nach der Behandlung beachten solltest</h3>
+          <p class="post-excerpt">Sonnenschutz ist der wichtigste Teil deiner Nachsorge. Und ja — lasern im Sommer geht, mit dem richtigen Plan.</p>
+          <span class="hs-go">Weiterlesen</span>
+        </a>
+        <a class="post-card rv d2" href="#artikel-needling">
+          <p class="post-meta">Kosmetik</p>
+          <h3>Microneedling: Was es kann — und für wen es sich lohnt</h3>
+          <p class="post-excerpt">Feinste Reize, grosse Wirkung: Wie die Haut mit Regeneration antwortet und wann sich eine Kur lohnt.</p>
+          <span class="hs-go">Weiterlesen</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ======================= ARTIKEL ======================= -->
+<div class="page" id="page-artikel-laser">
+  <section style="padding-top:8.5rem" data-shopify="article">
+    <div class="wrap" style="max-width:820px">
+      <p class="post-meta rv"><a href="#journal" style="text-decoration:none">Journal</a> · Laser</p>
+      <h1 class="rv">Wie funktioniert Laser-Haarentfernung mit dem 4-Wellen-Diodenlaser?</h1>
+      <div class="article-body rv d1" style="margin-top:2rem">
+        <p>Rasieren, Waxing, Epilieren — und ein paar Tage später beginnt alles von vorn. Die Laser-Haarentfernung setzt früher an: an der Haarwurzel selbst.</p>
+        <h2>Das Prinzip</h2>
+        <p>Der Diodenlaser sendet Lichtimpulse aus, die vom Farbstoff (Melanin) im Haar aufgenommen und in Wärme umgewandelt werden. Diese Wärme erreicht die Haarwurzel und schwächt sie gezielt — das Haar fällt aus und wächst deutlich feiner, langsamer oder gar nicht mehr nach. Die umliegende Haut bleibt dabei geschont.</p>
+        <h2>Warum vier Wellenlängen?</h2>
+        <p>Jeder Mensch bringt eine andere Kombination aus Hautton und Haarstruktur mit. Klassische Geräte arbeiten mit einer einzigen Wellenlänge — gut für einen Typ, weniger gut für andere. Der medizinische 4-Wellen-Diodenlaser kombiniert vier Wellenlängen in einem Impuls und erreicht damit unterschiedliche Haartiefen und Hauttypen in einer Behandlung. Das macht die Methode besonders effektiv und gleichzeitig schonend — auch in empfindlichen Bereichen.</p>
+        <h2>Warum braucht es mehrere Sitzungen?</h2>
+        <p>Haare wachsen in Zyklen, und der Laser wirkt am besten in der Wachstumsphase. Da nie alle Haare gleichzeitig in dieser Phase sind, braucht es mehrere Behandlungen im Abstand von 4–8 Wochen — in der Regel 6–10 Sitzungen. Schon nach den ersten Terminen merkst du: Es wächst weniger, feiner und langsamer nach.</p>
+        <h2>Für wen eignet sich die Behandlung?</h2>
+        <p>Dank der vier Wellenlängen für die allermeisten Haut- und Haartypen. Ob sie auch für dich passt, schauen wir uns ehrlich in einer persönlichen Beratung mit Hautanalyse an — unverbindlich und ohne Verkaufsdruck.</p>
+      </div>
+      <div class="btn-row rv">
+        <a class="btn btn-line" href="#journal">Alle Beiträge</a>
+        <a class="btn btn-ink" href="https://wa.me/41763494844" target="_blank" rel="noopener">Beratung buchen</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="page" id="page-artikel-sonne">
+  <section style="padding-top:8.5rem" data-shopify="article">
+    <div class="wrap" style="max-width:820px">
+      <p class="post-meta rv"><a href="#journal" style="text-decoration:none">Journal</a> · Laser</p>
+      <h1 class="rv">Lasern und Sonne: Was du vor und nach der Behandlung beachten solltest</h1>
+      <div class="article-body rv d1" style="margin-top:2rem">
+        <p>Die häufigste Frage im Studio nach der Behandlung: «Und was ist jetzt mit Sonne?» Zu Recht — Sonnenschutz ist der wichtigste Teil deiner Nachsorge.</p>
+        <h2>Warum Sonne und Laser sich nicht mögen</h2>
+        <p>Der Laser arbeitet mit dem Melanin im Haar. Frisch gebräunte Haut enthält mehr Melanin — und reagiert dadurch empfindlicher. Nach der Behandlung ist die Haut zudem kurzzeitig gereizt und braucht Ruhe, um sich zu regenerieren.</p>
+        <h2>Vor der Behandlung</h2>
+        <ul>
+          <li>In den Wochen vor dem Termin direkte Sonne und Solarium meiden</li>
+          <li>Haare nicht zupfen, wachsen oder epilieren — die Wurzel muss intakt bleiben. Rasieren ist erlaubt</li>
+        </ul>
+        <h2>Nach der Behandlung</h2>
+        <ul>
+          <li>Mindestens 2 Wochen keine direkte Sonneneinstrahlung auf die behandelten Zonen</li>
+          <li>Täglich LSF 50+ — am besten machst du das gleich zur Gewohnheit</li>
+          <li>Kein Solarium zwischen den Behandlungen</li>
+          <li>In den ersten 24–48 Stunden zusätzlich: keine Sauna, kein intensiver Sport, keine heissen Bäder</li>
+        </ul>
+        <h2>Heisst das: kein Lasern im Sommer?</h2>
+        <p>Nein — aber es heisst: mit Plan. Zonen, die ohnehin bedeckt sind, lassen sich das ganze Jahr behandeln. Für Gesicht und Arme planen wir die Termine so, dass deine Haut genug Ruhe hat. Und wer im Herbst startet, ist bis zum nächsten Sommer fertig — die beste Strategie für dauerhaft glatte Haut in der Badi.</p>
+      </div>
+      <div class="btn-row rv">
+        <a class="btn btn-line" href="#journal">Alle Beiträge</a>
+        <a class="btn btn-ink" href="https://wa.me/41763494844" target="_blank" rel="noopener">Beratung buchen</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="page" id="page-artikel-needling">
+  <section style="padding-top:8.5rem" data-shopify="article">
+    <div class="wrap" style="max-width:820px">
+      <p class="post-meta rv"><a href="#journal" style="text-decoration:none">Journal</a> · Kosmetik</p>
+      <h1 class="rv">Microneedling: Was es kann — und für wen es sich lohnt</h1>
+      <div class="article-body rv d1" style="margin-top:2rem">
+        <p>Microneedling gehört zu den beliebtesten Behandlungen im Studio — und zu denen, über die am meisten Halbwissen kursiert. Hier die ehrliche Einordnung.</p>
+        <h2>Was beim Microneedling passiert</h2>
+        <p>Feinste Nadeln setzen winzige, kontrollierte Reize in der obersten Hautschicht. Die Haut antwortet darauf mit dem, was sie am besten kann: Regeneration. Sie bildet neues Kollagen, erneuert sich von innen und nimmt Wirkstoffe in dieser Phase besonders gut auf — deshalb kombiniere ich das Needling immer mit einem Serum, das auf deinen aktuellen Hautzustand abgestimmt ist.</p>
+        <h2>Wofür es sich eignet</h2>
+        <ul>
+          <li>Verfeinerung des Hautbilds und der Poren</li>
+          <li>Erste Zeichen der Hautalterung, feine Linien</li>
+          <li>Unebenheiten und müde wirkende Haut</li>
+          <li>Als Kur: mehrere Sitzungen für ein nachhaltiges Ergebnis (dafür gibt es das 5er-Abo)</li>
+        </ul>
+        <h2>Wie eine Behandlung abläuft</h2>
+        <p>Bei mir dauert das Microneedling ca. 1.5 Stunden: gründliche Reinigung und Ausreinigung, Enzympeeling, das eigentliche Needling mit angepasstem Serum, danach Maske und Abschlusspflege. Direkt danach kann die Haut leicht gerötet sein — das beruhigt sich in der Regel schnell.</p>
+        <h2>Microneedling oder BiopeelX?</h2>
+        <p>Das BiopeelX Premium Algen-Microneedling ergänzt die klassische Methode um eine Algen-Komponente für zusätzliche Wirkung. Was für deine Haut sinnvoller ist, entscheiden wir nicht am Telefon, sondern beim Blick auf deine Haut — ehrlich, wie immer.</p>
+      </div>
+      <div class="btn-row rv">
+        <a class="btn btn-line" href="#journal">Alle Beiträge</a>
+        <a class="btn btn-ink" href="https://wa.me/41763494844" target="_blank" rel="noopener">Facial buchen</a>
+      </div>
+    </div>
+  </section>
+</div>
 </main>
 
 <!-- ======================= FOOTER → sections/footer.liquid ======================= -->
@@ -785,6 +1060,8 @@ footer li{list-style:none;padding:.2rem 0}
         <li><a href="#kosmetik">Kosmetik</a></li>
         <li><a href="#makeup">Make-up &amp; Styling</a></li>
         <li><a href="#ergebnisse">Vorher / Nachher</a></li>
+        <li><a href="#journal">Journal</a></li>
+        <li><a href="#faq">FAQ</a></li>
       </ul>
     </div>
   </div>
@@ -803,7 +1080,7 @@ footer li{list-style:none;padding:.2rem 0}
 
 <script>
 (function(){
-  var pages = ['home','ueber-mich','haarentfernung','kosmetik','makeup','ergebnisse','kontakt'];
+  var pages = ['home','ueber-mich','haarentfernung','kosmetik','makeup','ergebnisse','kontakt','faq','journal','artikel-laser','artikel-sonne','artikel-needling'];
 
   /* Router */
   function show(){
@@ -811,6 +1088,8 @@ footer li{list-style:none;padding:.2rem 0}
     var page = pages.indexOf(h) !== -1 ? h : (pages.indexOf(h.split('-preise')[0]) !== -1 ? h.split('-preise')[0] : 'home');
     pages.forEach(function(p){ document.getElementById('page-' + p).classList.toggle('active', p === page); });
     document.querySelectorAll('[data-nav]').forEach(function(a){ a.classList.toggle('active', a.getAttribute('data-nav') === page); });
+    var groupPages = ['haarentfernung','kosmetik','makeup'];
+    document.querySelectorAll('[data-group="behandlungen"]').forEach(function(a){ a.classList.toggle('active', groupPages.indexOf(page) !== -1); });
     document.querySelector('nav').classList.remove('open');
     if (pages.indexOf(h) !== -1) { window.scrollTo(0,0); }
     else { var el = document.getElementById(h); if (el) el.scrollIntoView(); }

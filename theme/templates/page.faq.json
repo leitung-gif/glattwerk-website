@@ -1,0 +1,50 @@
+{
+  "sections": {
+    "faq": {
+      "type": "faq",
+      "settings": {
+        "kicker": "Gut zu wissen",
+        "heading": "Deine Fragen, <em>ehrlich beantwortet.</em>",
+        "text": "Die häufigsten Fragen rund um Laser-Haarentfernung, Kosmetik und deinen Besuch im Studio. Deine Frage fehlt? Schreib mir direkt.",
+        "open_first": true,
+        "cta_label": "Frag mich direkt"
+      },
+      "blocks": {
+        "q1": { "type": "qa", "settings": {
+          "question": "Wie viele Sitzungen brauche ich für dauerhaft glatte Haut?",
+          "answer": "<p>Je nach Körperregion und Haarstruktur sind ca. 6–10 Behandlungen nötig, im Abstand von 4–8 Wochen. Schon nach wenigen Sitzungen wachsen die Haare feiner und langsamer nach. Deinen persönlichen Behandlungsplan erstellen wir gemeinsam bei der Beratung.</p>"
+        } },
+        "q2": { "type": "qa", "settings": {
+          "question": "Für wen eignet sich der 4-Wellen-Diodenlaser?",
+          "answer": "<p>Dank der Kombination aus vier Wellenlängen können verschiedene Haut- und Haartypen effektiv und schonend behandelt werden — auch empfindliche Bereiche wie Gesicht oder Intimzone. Ob die Behandlung für dich passt, klären wir ehrlich und unverbindlich in der persönlichen Beratung mit Hautanalyse.</p>"
+        } },
+        "q3": { "type": "qa", "settings": {
+          "question": "Was kostet die Laser-Haarentfernung?",
+          "answer": "<p>Einzelne Zonen gibt es ab CHF 45.–, Ganzkörper (4 Zonen) kostet CHF 290.– für Damen und CHF 320.– für Herren. Die komplette Übersicht findest du auf der <a href=\"/pages/haarentfernung\">Haarentfernungs-Seite</a>.</p>"
+        } },
+        "q4": { "type": "qa", "settings": {
+          "question": "Wie bereite ich mich auf die Behandlung vor?",
+          "answer": "<p>Wichtig ist vor allem: in den Wochen vor dem Termin die Haare nicht zupfen, wachsen oder epilieren (rasieren ist erlaubt) und direkte Sonne sowie Solarium meiden. Alle Details zu deiner Vorbereitung besprechen wir bei der Beratung.</p>"
+        } },
+        "q5": { "type": "qa", "settings": {
+          "question": "Was muss ich nach dem Lasern beachten?",
+          "answer": "<p>In den ersten 24–48 Stunden Sauna, Sport und Sonne meiden, die Haut kühlen und mit milder Pflege (z. B. Aloe Vera) beruhigen, danach konsequent LSF 50+. Die behandelten Haare fallen nach 7–21 Tagen von selbst aus. Die komplette Anleitung findest du in den <a href=\"/pages/haarentfernung\">Pflegetipps</a> — und du bekommst sie nach der Behandlung von mir mit.</p>"
+        } },
+        "q6": { "type": "qa", "settings": {
+          "question": "Ist die Behandlung schmerzhaft?",
+          "answer": "<p>Die meisten empfinden die Behandlung als gut aushaltbar — ein Wärmegefühl und leichte Rötungen danach sind normal und klingen rasch ab. Ich passe jede Behandlung individuell an deine Haut an und nehme mir Zeit, damit du dich rundum wohlfühlst.</p>"
+        } },
+        "q7": { "type": "qa", "settings": {
+          "question": "Behandelst du auch Herren?",
+          "answer": "<p>Ja — für Herren gibt es eine eigene Preisliste, von Gesicht über Rücken bis Beine. Einzig die Intimzone ist bei Herren nicht im Angebot.</p>"
+        } },
+        "q8": { "type": "qa", "settings": {
+          "question": "Wie buche ich einen Termin?",
+          "answer": "<p>Am einfachsten per WhatsApp oder Telefon unter 076 349 48 44 — oder über das <a href=\"/pages/kontakt\">Kontaktformular</a>. Termine nach Vereinbarung, das Studio ist an der Industriestrasse 173a in Spreitenbach.</p>"
+        } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8"]
+    }
+  },
+  "order": ["faq"]
+}

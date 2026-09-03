@@ -1,0 +1,46 @@
+<section class="sec sec-first">
+  <div class="wrap-wide">
+    <div class="center rv">
+      <span class="kicker">{{ section.settings.kicker }}</span>
+      <h1>{{ blog.title }}</h1>
+      {%- if section.settings.text != blank -%}<p class="lede" style="margin:1.4rem auto 0">{{ section.settings.text }}</p>{%- endif -%}
+    </div>
+    {%- paginate blog.articles by 9 -%}
+      <div class="blog-grid">
+        {%- for article in blog.articles -%}
+          <a class="post-card rv {% cycle '', 'd1', 'd2' %}" href="{{ article.url }}">
+            <div class="post-img">
+              {%- if article.image -%}
+                {{ article.image | image_url: width: 840 | image_tag: alt: article.title, loading: 'lazy' }}
+              {%- else -%}
+                <img src="{{ 'studio-interieur.jpg' | asset_url }}" alt="" width="840" height="630" loading="lazy">
+              {%- endif -%}
+            </div>
+            <p class="post-meta">{{ article.published_at | date: '%d.%m.%Y' }}{% if article.tags.size > 0 %} · {{ article.tags.first }}{% endif %}</p>
+            <h3>{{ article.title }}</h3>
+            <p class="post-excerpt">{{ article.excerpt_or_content | strip_html | truncate: 140 }}</p>
+            <span class="hs-go">Weiterlesen</span>
+          </a>
+        {%- else -%}
+          <p class="lede" style="grid-column:1/-1;text-align:center">Bald findest du hier Beiträge rund um Laser, Hautpflege und Make-up.</p>
+        {%- endfor -%}
+      </div>
+      {%- if paginate.pages > 1 -%}
+        <div class="btn-row" style="justify-content:center">
+          {%- if paginate.previous -%}<a class="btn btn-line" href="{{ paginate.previous.url }}">← Neuere</a>{%- endif -%}
+          {%- if paginate.next -%}<a class="btn btn-line" href="{{ paginate.next.url }}">Ältere →</a>{%- endif -%}
+        </div>
+      {%- endif -%}
+    {%- endpaginate -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Blog-Übersicht",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Beauty-Journal" },
+    { "type": "textarea", "id": "text", "label": "Einleitung", "default": "Wissen aus dem Studio: Laser, Hautpflege und Make-up — ehrlich erklärt." }
+  ]
+}
+{% endschema %}

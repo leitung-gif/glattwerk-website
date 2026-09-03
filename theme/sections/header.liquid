@@ -8,11 +8,22 @@
       {%- endif -%}
       <span class="brand-name">{{ section.settings.brand_title }}<small>{{ section.settings.brand_sub }}</small></span>
     </a>
-    <button class="burger" aria-label="Menü">☰</button>
-    <nav class="site-nav">
+    <button class="burger" aria-label="Menü" aria-expanded="false">☰</button>
+    <nav class="site-nav" aria-label="Hauptnavigation">
       <ul>
         {%- for link in section.settings.menu.links -%}
-          <li><a href="{{ link.url }}" {% if link.active %}class="active"{% endif %}>{{ link.title }}</a></li>
+          {%- if link.links.size > 0 -%}
+            <li class="has-sub">
+              <a href="{{ link.url }}" {% if link.active or link.child_active %}class="active"{% endif %} aria-haspopup="true">{{ link.title }} <span class="caret" aria-hidden="true">▾</span></a>
+              <ul class="sub">
+                {%- for child in link.links -%}
+                  <li><a href="{{ child.url }}" {% if child.active %}class="active"{% endif %}>{{ child.title }}</a></li>
+                {%- endfor -%}
+              </ul>
+            </li>
+          {%- else -%}
+            <li><a href="{{ link.url }}" {% if link.active %}class="active"{% endif %}>{{ link.title }}</a></li>
+          {%- endif -%}
         {%- endfor -%}
         {%- if settings.whatsapp_number != blank -%}
           <li><a class="nav-cta" href="https://wa.me/{{ settings.whatsapp_number }}" target="_blank" rel="noopener">{{ section.settings.cta_label }}</a></li>
@@ -29,7 +40,7 @@
     { "type": "image_picker", "id": "logo", "label": "Logo (Fallback: mitgeliefertes Logo)" },
     { "type": "text", "id": "brand_title", "label": "Markenname", "default": "Glattwerk" },
     { "type": "text", "id": "brand_sub", "label": "Unterzeile", "default": "BEAUTY · SPREITENBACH" },
-    { "type": "link_list", "id": "menu", "label": "Navigation", "default": "main-menu" },
+    { "type": "link_list", "id": "menu", "label": "Navigation", "default": "main-menu", "info": "Unterpunkte im Menü werden zum Aufklapp-Menü (z. B. «Behandlungen» mit Haarentfernung, Kosmetik, Make-up)" },
     { "type": "text", "id": "cta_label", "label": "Buchungs-Button", "default": "Termin buchen" }
   ]
 }

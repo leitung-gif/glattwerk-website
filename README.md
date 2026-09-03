@@ -22,8 +22,13 @@ shopify theme push --store <dev-store>.myshopify.com    # Hochladen
 ```
 
 Danach im Admin:
-1. **Seiten anlegen** mit diesen Handles (Template wird automatisch zugeordnet): `haarentfernung`, `kosmetik`, `make-up-styling`, `ueber-mich`, `vorher-nachher`, `kontakt` — Templates im Seiten-Editor unter «Theme-Vorlage» auswählen (`page.haarentfernung` usw.)
-2. **Menü `main-menu`** befüllen: Home, Über mich, Haarentfernung, Kosmetik, Make-up & Styling, Vorher/Nachher, Kontakt; Footer-Menü `footer` analog
+1. **Seiten anlegen** mit diesen Handles (Theme-Vorlage im Seiten-Editor auswählen): `haarentfernung`, `kosmetik`, `make-up-styling`, `ueber-mich`, `vorher-nachher`, `kontakt`, `faq`
+2. **Menü `main-menu`** mit Dropdown-Struktur befüllen (Unterpunkte werden automatisch zum Aufklapp-Menü):
+   - Behandlungen (Link auf Haarentfernung) → darunter: Haarentfernung, Kosmetik, Make-up & Styling
+   - Vorher / Nachher · Über mich · Journal (Blog) · FAQ · Kontakt
+   - Footer-Menü `footer` flach analog
+3. **Blog:** Standard-Blog «News» in «Journal» umbenennen (oder neuen Blog `journal` anlegen). Die drei Startartikel liegen fertig in `content/blog/` — Titel, Tag und Text einfach übernehmen, je ein Studio-Foto als Beitragsbild
+4. **SEO ist eingebaut:** Meta-Descriptions (Standardtext in den Theme-Settings, pro Seite im Admin überschreibbar), Open-Graph-Tags, LocalBusiness-Schema (BeautySalon mit Adresse/Koordinaten — exakte Koordinaten in den Theme-Settings nachtragen), FAQPage-Schema auf der FAQ-Seite, Article-Schema auf Blogbeiträgen. Nach Livegang: Google Business Profile verknüpfen und Sitemap (`/sitemap.xml`) in der Search Console einreichen
 3. Bilder sind als Theme-Assets mitgeliefert (Fallbacks) — für den produktiven Betrieb im Customizer echte Bilder über die Bild-Wähler setzen
 4. Kontaktformular nutzt das native Shopify-Kontaktformular (Mails gehen an die Store-Absenderadresse)
 5. Preise, Texte, Farben, Kontaktdaten: alles im Customizer editierbar (Theme-Settings → Markenfarben / Kontakt & Studio)

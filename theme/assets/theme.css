@@ -255,3 +255,78 @@ table.prices .desc{display:block;font-size:.78rem;color:var(--ink-soft);margin-t
 .rte h2,.rte h3{color:var(--ink);margin:1.6em 0 .5em}
 .rte p{margin:.8em 0}
 .rte a{color:var(--gold-deep)}
+
+/* ============================================================
+   v3.1 — Header-Dropdown, FAQ, Blog, Design-Schärfung
+   ============================================================ */
+
+/* ---------- Dropdown-Navigation ---------- */
+.site-nav .has-sub{position:relative}
+.site-nav .caret{font-size:.62em;opacity:.7;margin-left:.15rem}
+.site-nav .sub{
+  position:absolute;top:100%;left:50%;transform:translate(-50%,8px);
+  min-width:230px;padding:.7rem 0;margin-top:.6rem;list-style:none;
+  background:var(--card);border:1px solid var(--line);border-radius:16px;
+  box-shadow:0 22px 54px rgba(23,39,29,.16);
+  opacity:0;visibility:hidden;transition:opacity .22s var(--ease),transform .22s var(--ease),visibility .22s;
+  display:block
+}
+.site-nav .sub::before{content:"";position:absolute;top:-.7rem;left:0;right:0;height:.7rem}
+.site-nav .has-sub:hover .sub,.site-nav .has-sub:focus-within .sub{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.site-nav .sub li{padding:0}
+.site-nav .sub a{display:block;padding:.55rem 1.4rem;font-size:.74rem;letter-spacing:.12em;color:var(--ink-soft)}
+.site-nav .sub a::after{display:none}
+.site-nav .sub a:hover,.site-nav .sub a.active{color:var(--gold-deep);background:rgba(173,134,31,.07)}
+@media(max-width:1220px){
+  .site-nav .sub{position:static;transform:none;opacity:1;visibility:visible;box-shadow:none;border:none;background:none;padding:.2rem 0 0;min-width:0;text-align:center}
+  .site-nav .sub a{font-size:.8rem;color:var(--ink-soft);padding:.35rem 0}
+  .site-nav .caret{display:none}
+}
+
+/* ---------- FAQ-Akkordeon ---------- */
+.faq-list{margin-top:2.8rem;border-top:1px solid var(--line)}
+.faq{border-bottom:1px solid var(--line)}
+.faq summary{
+  display:flex;justify-content:space-between;align-items:center;gap:1.5rem;
+  padding:1.4rem .2rem;cursor:pointer;list-style:none;
+  font-family:var(--font-d);font-size:1.25rem;font-weight:500;color:var(--ink);
+  transition:color .2s
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--gold-deep)}
+.faq summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.faq-icon{position:relative;flex:0 0 30px;height:30px;border:1px solid var(--line-gold);border-radius:50%}
+.faq-icon::before,.faq-icon::after{content:"";position:absolute;top:50%;left:50%;background:var(--gold-deep);transition:transform .25s var(--ease)}
+.faq-icon::before{width:12px;height:1.5px;transform:translate(-50%,-50%)}
+.faq-icon::after{width:1.5px;height:12px;transform:translate(-50%,-50%)}
+.faq[open] .faq-icon::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq[open] summary{color:var(--gold-deep)}
+.faq-a{padding:0 .2rem 1.6rem;color:var(--ink-soft);max-width:44rem}
+.faq-a p{margin:.4em 0}
+.faq-a a{color:var(--gold-deep)}
+
+/* ---------- Blog ---------- */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem 1.8rem;margin-top:3.2rem}
+@media(max-width:980px){.blog-grid{grid-template-columns:1fr}}
+.post-card{text-decoration:none;color:var(--ink);display:block}
+.post-img{border-radius:22px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 18px 46px rgba(23,39,29,.14)}
+.post-img img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.post-card:hover .post-img img{transform:scale(1.05)}
+.post-meta{font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-deep);margin:1.2rem 0 .4rem}
+.post-meta a{color:inherit;text-decoration:none}
+.post-card h3{font-size:1.45rem;line-height:1.2}
+.post-excerpt{font-size:.92rem;color:var(--ink-soft);margin:.5rem 0 .8rem}
+.rte h2{font-size:1.7rem;margin:1.8em 0 .5em}
+.rte ul,.rte ol{margin:.8em 0 .8em 1.3em}
+.rte li{margin:.3em 0}
+
+/* ---------- Design-Schärfung ---------- */
+.sec{padding:5.5rem 0}
+.kicker{letter-spacing:.4em}
+.bigword{letter-spacing:-.03em}
+.arch{box-shadow:0 22px 55px rgba(23,39,29,.16)}
+.btn-ink::after,.btn-line::after{content:"→";display:inline-block;margin-left:.6rem;transition:transform .25s var(--ease)}
+.btn-ink:hover::after,.btn-line:hover::after{transform:translateX(4px)}
+.hscroll{scrollbar-width:none}
+.hscroll::-webkit-scrollbar{display:none}
+.hs-card .arch{box-shadow:0 16px 40px rgba(23,39,29,.14)}
