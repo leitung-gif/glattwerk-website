@@ -46,7 +46,7 @@ html{scroll-behavior:smooth}
 body{
   background:var(--bg);
   background-image:radial-gradient(1100px 500px at 50% -180px,rgba(201,162,75,.16),transparent 65%);
-  color:var(--tx);font-family:var(--font-b);font-weight:400;font-size:16.5px;line-height:1.7;
+  color:var(--tx);font-family:var(--font-b);font-weight:400;font-size:17.5px;line-height:1.7;
   -webkit-font-smoothing:antialiased;overflow-x:hidden;
   padding-bottom:calc(var(--tabbar-h) + 14px);
 }
@@ -183,7 +183,7 @@ table.prices .desc{display:block;font-size:.76rem;color:var(--tx-dim);margin-top
 .ba-chip.l{left:12px}.ba-chip.r{right:12px;background:var(--gold);color:var(--bg-deep)}
 .ba-note{font-size:.72rem;color:var(--tx-dim);margin-top:.7rem;text-align:center;letter-spacing:.06em}
 .ba-grid{display:grid;gap:1.2rem}
-@media(min-width:640px){.ba-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:640px){.ba-grid{grid-template-columns:repeat(2,1fr)}}
 
 /* ---------- Pflegetipps / FAQ ---------- */
 .tip h4{font-family:var(--font-b);font-weight:500;font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-hi);margin-bottom:.6rem}
@@ -266,7 +266,7 @@ body.sheet-open .sheet-backdrop{opacity:1;visibility:visible}
 
 /* ---------- Desktop: App-Spalte + Dock ---------- */
 @media(min-width:900px){
-  body{font-size:17px}
+  body{font-size:18px}
   .wrap{padding:0 1.5rem}
   .tabbar{
     left:50%;right:auto;bottom:18px;transform:translateX(-50%);
@@ -553,6 +553,8 @@ body.sheet-open .sheet-backdrop{opacity:1;visibility:visible}
       <p class="lede">Entdecke, was wirklich zu dir passt. Mit individuell abgestimmtem Make-up und professioneller Farbberatung unterstreiche ich deine natürliche Ausstrahlung. Gemeinsam finden wir die Farben, die deinen Teint zum Strahlen bringen und deinen Look harmonisch abrunden. Für mehr Sicherheit, Stil und ein Auftreten, das sich einfach richtig anfühlt.</p>
     </div>
 
+    <div class="sec photo-card"><img src="__IMG_MAKEUP__" alt="Make-up Produkte im Glattwerk Beauty Studio"></div>
+
     <div class="sec card">
       <h2 class="gold">Make-up für jeden Anlass</h2>
       <table class="prices" style="margin-top:.9rem">
@@ -564,6 +566,8 @@ body.sheet-open .sheet-backdrop{opacity:1;visibility:visible}
       </table>
       <p class="price-note">Individuell auf dich und deinen Anlass abgestimmt, für einen Look, der deine natürliche Schönheit unterstreicht und den ganzen Tag hält.</p>
     </div>
+
+    <div class="sec photo-card"><img src="__IMG_FARBBERATUNG__" alt="Farbberatung mit Farbtüchern"></div>
 
     <div class="sec card">
       <h2 class="gold">Farb- &amp; Stilberatung</h2>
@@ -588,18 +592,23 @@ body.sheet-open .sheet-backdrop{opacity:1;visibility:visible}
     <div class="ba-grid sec">
       <div>
         <div class="ba" data-img="__IMG_BA_ACHSEL__"><span class="ba-chip l">Vorher</span><span class="ba-chip r">Nachher</span></div>
-        <h3 style="margin-top:.9rem" class="gold">Haare — Achsel / kleine Zone</h3>
+        <h3 style="margin-top:.9rem" class="gold">Haare: Achsel / kleine Zone</h3>
         <p class="lede" style="font-size:.88rem">Schon nach wenigen Sitzungen wachsen die Haare deutlich feiner und langsamer nach. Rasieren wird seltener und die Haut wirkt sichtbar ruhiger.</p>
       </div>
       <div>
-        <div class="ba" data-img="__IMG_BA_KOERPER__"><span class="ba-chip l">Vorher</span><span class="ba-chip r">Nachher</span></div>
-        <h3 style="margin-top:.9rem" class="gold">Haare — Oberkörper / grosse Zone</h3>
+        <div class="ba" data-img="__IMG_BA_MANN__"><span class="ba-chip l">Vorher</span><span class="ba-chip r">Nachher</span></div>
+        <h3 style="margin-top:.9rem" class="gold">Haare: Oberkörper / grosse Zone</h3>
         <p class="lede" style="font-size:.88rem">Mit jeder Sitzung werden die Haare weniger und feiner. Nach ca. 6–10 Behandlungen ist das Ergebnis langfristig sichtbar.</p>
       </div>
       <div>
-        <div class="ba" data-img="__IMG_BA_GESICHT__"><span class="ba-chip l">Vorher</span><span class="ba-chip r">Nachher</span></div>
-        <h3 style="margin-top:.9rem" class="gold">Gesicht</h3>
+        <div class="ba" data-img="__IMG_BA_GESBEH__"><span class="ba-chip l">Vorher</span><span class="ba-chip r">Nachher</span></div>
+        <h3 style="margin-top:.9rem" class="gold">Gesichtsbehandlung</h3>
         <p class="lede" style="font-size:.88rem">Schon nach der ersten Behandlung wirkt deine Haut frischer und ausgeglichener. Unreinheiten und Rötungen werden sichtbar verbessert.</p>
+      </div>
+      <div>
+        <div class="ba" data-img="__IMG_BA_BRAUEN__"><span class="ba-chip l">Vorher</span><span class="ba-chip r">Nachher</span></div>
+        <h3 style="margin-top:.9rem" class="gold">Brauen &amp; Wimpern</h3>
+        <p class="lede" style="font-size:.88rem">Gepflegte Brauen und perfekt betonte Wimpern lassen dein Gesicht strahlen und verleihen dir einen frischen, natürlichen Look.</p>
       </div>
     </div>
     <p class="ba-note">Zieh den goldenen Regler, um zu vergleichen.</p>
@@ -630,13 +639,13 @@ body.sheet-open .sheet-backdrop{opacity:1;visibility:visible}
     <div class="article-body" style="margin-top:1.2rem">
       <p>Rasieren, Waxing, Epilieren — und ein paar Tage später beginnt alles von vorn. Die Laser-Haarentfernung setzt früher an: an der Haarwurzel selbst.</p>
       <h2>Das Prinzip</h2>
-      <p>Der Diodenlaser sendet Lichtimpulse aus, die vom Farbstoff (Melanin) im Haar aufgenommen und in Wärme umgewandelt werden. Diese Wärme erreicht die Haarwurzel und schwächt sie gezielt — das Haar fällt aus und wächst deutlich feiner, langsamer oder gar nicht mehr nach. Die umliegende Haut bleibt dabei geschont.</p>
+      <p>Der Diodenlaser arbeitet gezielt mit dem Melanin im Haar. Die Lichtenergie wird vom Farbstoff aufgenommen, in Wärme umgewandelt und bis zur Haarwurzel geleitet. Dort wird die Haarwurzel durch die Wärme gezielt geschädigt, sodass das behandelte Haar nicht mehr nachwachsen kann. Haare, die noch nicht in der aktiven Wachstumsphase waren, werden bei den folgenden Behandlungen erfasst. So wird der Haarwuchs von Behandlung zu Behandlung nachhaltig reduziert, für langfristig glattere Haut.</p>
       <h2>Warum vier Wellenlängen?</h2>
       <p>Jeder Mensch bringt eine andere Kombination aus Hautton und Haarstruktur mit. Klassische Geräte arbeiten mit einer einzigen Wellenlänge — gut für einen Typ, weniger gut für andere. Der medizinische 4-Wellen-Diodenlaser kombiniert vier Wellenlängen in einem Impuls und erreicht damit unterschiedliche Haartiefen und Hauttypen in einer Behandlung. Das macht die Methode besonders effektiv und gleichzeitig schonend — auch in empfindlichen Bereichen.</p>
       <h2>Warum braucht es mehrere Sitzungen?</h2>
-      <p>Haare wachsen in Zyklen, und der Laser wirkt am besten in der Wachstumsphase. Da nie alle Haare gleichzeitig in dieser Phase sind, braucht es mehrere Behandlungen im Abstand von 4–8 Wochen — in der Regel 6–10 Sitzungen. Schon nach den ersten Terminen merkst du: Es wächst weniger, feiner und langsamer nach.</p>
+      <p>Haare wachsen in verschiedenen Zyklen. Der Laser kann nur die Haare behandeln, die sich gerade in der aktiven Wachstumsphase befinden, da nur dann eine wirksame Verbindung zur Haarwurzel besteht. Da nie alle Haare gleichzeitig in dieser Phase sind, braucht es mehrere Behandlungen im Abstand von 4–8 Wochen, in der Regel 6–10 Sitzungen. Schon nach den ersten Terminen merkst du: Die Haare wachsen weniger, feiner und langsamer nach.</p>
       <h2>Für wen eignet sich die Behandlung?</h2>
-      <p>Dank der vier Wellenlängen für die allermeisten Haut- und Haartypen. Ob sie auch für dich passt, schauen wir uns ehrlich in einer persönlichen Beratung mit Hautanalyse an — unverbindlich und ohne Verkaufsdruck.</p>
+      <p>Dank der vier Wellenlängen eignet sich die Behandlung für die allermeisten Haut- und Haartypen. Weisse Haare ohne Pigmente können nicht gelasert werden, und bei sehr dunklen Hauttypen ist eine besonders individuelle Beurteilung notwendig. Ob die Behandlung für dich geeignet ist, klären wir in einer persönlichen Beratung mit Haut- und Haaranalyse.</p>
     </div>
     <div class="btn-row"><a class="btn btn-gold" href="https://wa.me/41763494844" target="_blank" rel="noopener">Beratung buchen</a><a class="btn btn-line" href="#journal">Alle Beiträge</a></div>
   </div>
@@ -691,7 +700,7 @@ body.sheet-open .sheet-backdrop{opacity:1;visibility:visible}
       <details class="faq"><summary><span>Für wen eignet sich der 4-Wellen-Diodenlaser?</span><i class="faq-icon"></i></summary><div class="faq-a"><p>Dank der Kombination aus vier Wellenlängen können verschiedene Haut- und Haartypen effektiv und schonend behandelt werden — auch empfindliche Bereiche wie Gesicht oder Intimzone. Ob die Behandlung für dich passt, klären wir ehrlich und unverbindlich in der persönlichen Beratung.</p></div></details>
       <details class="faq"><summary><span>Was kostet die Laser-Haarentfernung?</span><i class="faq-icon"></i></summary><div class="faq-a"><p>Einzelne Zonen gibt es ab CHF 45.–, Ganzkörper (4 Zonen) kostet CHF 290.– für Damen und CHF 320.– für Herren. Die komplette Übersicht findest du im <a href="#haarentfernung-preise">Angebot</a>.</p></div></details>
       <details class="faq"><summary><span>Wie bereite ich mich auf die Behandlung vor?</span><i class="faq-icon"></i></summary><div class="faq-a"><p>Wichtig ist vor allem: in den Wochen vor dem Termin die Haare nicht zupfen, wachsen oder epilieren (rasieren ist erlaubt) und direkte Sonne sowie Solarium meiden. Alle Details besprechen wir bei der Beratung.</p></div></details>
-      <details class="faq"><summary><span>Was muss ich nach dem Lasern beachten?</span><i class="faq-icon"></i></summary><div class="faq-a"><p>In den ersten 24–48 Stunden Sauna, Sport und Sonne meiden, die Haut kühlen und mit milder Pflege beruhigen, danach konsequent LSF 50+. Die komplette Anleitung findest du in den <a href="#haarentfernung">Pflegetipps</a>.</p></div></details>
+      <details class="faq"><summary><span>Was muss ich nach dem Lasern beachten?</span><i class="faq-icon"></i></summary><div class="faq-a"><p>In den ersten 24–48 Stunden Sauna, Sport und Sonne meiden, die Haut mit milder Pflege beruhigen, danach konsequent LSF 50+. Die komplette Anleitung findest du in den <a href="#haarentfernung">Pflegetipps</a>.</p></div></details>
       <details class="faq"><summary><span>Ist die Behandlung schmerzhaft?</span><i class="faq-icon"></i></summary><div class="faq-a"><p>Die meisten empfinden die Behandlung als gut aushaltbar — ein Wärmegefühl und leichte Rötungen danach sind normal und klingen rasch ab. Ich passe jede Behandlung individuell an deine Haut an.</p></div></details>
       <details class="faq"><summary><span>Behandelst du auch Herren?</span><i class="faq-icon"></i></summary><div class="faq-a"><p>Ja — für Herren gibt es eine eigene Preisliste. Einzig die Intimzone ist bei Herren nicht im Angebot.</p></div></details>
       <details class="faq"><summary><span>Wie buche ich einen Termin?</span><i class="faq-icon"></i></summary><div class="faq-a"><p>Am einfachsten per WhatsApp oder Telefon unter 076 349 48 44 — oder über das <a href="#kontakt">Kontaktformular</a>. Termine nach Vereinbarung.</p></div></details>
